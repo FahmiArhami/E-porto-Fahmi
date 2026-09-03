@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Model Guru yang Dituju — Gambaran, Prinsip, Filosofi, dan Harapan" />
+  <title>Model Guru yang Dituju — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"          class="navbar__link">UTS</a>
+        <a href="model-guru.html"   class="navbar__link active">Model Guru</a>
+        <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Wave bar dekorasi Jepang -->
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"        class="navbar__link">Home</a>
+    <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"          class="navbar__link">UTS</a>
+    <a href="model-guru.html"   class="navbar__link active">Model Guru</a>
+    <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Model Guru yang Dituju</span>
+        </nav>
+        <p class="page-header__label">Visi Sebagai Pendidik</p>
+        <h1 class="page-header__title">Model Guru yang Dituju</h1>
+        <p class="page-header__subtitle">
+          Guru seperti apa yang ingin saya wujudkan?
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         SECTION 1: GURU YANG INGIN DIWUJUDKAN
+    ============================================================ -->
+    <section class="section section--white" aria-labelledby="guru-title">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Gambaran Guru · 理想の先生</span>
+          <h2 class="section-title" id="guru-title">Guru yang Ingin Saya Wujudkan</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div style="max-width: 760px; margin-inline: auto;">
+          <div class="info-block fade-up delay-1">
+            <div class="info-block__text" id="gambaran-text">
+              [ Tuliskan secara personal dan reflektif: guru seperti apa yang ingin Anda wujudkan?
+              Bagaimana cara berinteraksi dengan peserta didik, cara mengajar, cara memahami
+              kebutuhan mereka, dan bagaimana Anda ingin dikenang sebagai guru? ]
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: PRINSIP DALAM MENGAJAR
+    ============================================================ -->
+    <section class="section" aria-labelledby="prinsip-title">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Panduan Mengajar · 教えの原則</span>
+          <h2 class="section-title" id="prinsip-title">Prinsip dalam Mengajar</h2>
+          <div class="divider"></div>
+          <p class="section-desc" style="margin-top: var(--space-4);">
+            Nilai-nilai yang menjadi panduan dalam setiap langkah mengajar.
+          </p>
+        </div>
+
+        <div class="prinsip-grid" id="prinsip-grid">
+          <!-- Diisi via JS dari DATA.modelGuru.prinsip -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: FILOSOFI MENGAJAR
+    ============================================================ -->
+    <section class="section section--white" aria-labelledby="filosofi-title">
+      <div class="container">
+        <div style="max-width: 760px; margin-inline: auto;">
+          <div class="section-header fade-up" style="text-align:left;">
+            <span class="section-label">Keyakinan Mendidik · 教育哲学</span>
+            <h2 class="section-title" id="filosofi-title" style="text-align:left;">Filosofi Mengajar Saya</h2>
+            <div class="divider divider--left"></div>
+            <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted); font-style: italic;">
+              "Apa yang saya yakini tentang proses belajar dan peran seorang guru?"
+            </p>
+          </div>
+
+          <div class="filosofi-block fade-up delay-1" style="margin-top: var(--space-6);">
+            <div class="filosofi-block__title">✦ Filosofi Mengajar</div>
+            <div class="filosofi-block__text" id="filosofi-text">
+              [ Tuliskan pandangan pribadi Anda tentang proses belajar dan peran seorang guru.
+              Apa yang Anda yakini secara mendalam tentang pendidikan? Apa makna mengajar bagi Anda?
+              Buat personal, reflektif, dan bermakna. ]
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: HARAPAN SEBAGAI GURU
+    ============================================================ -->
+    <section class="section" aria-labelledby="harapan-title">
+      <div class="container">
+        <div class="harapan-block fade-up" style="max-width:760px; margin-inline:auto;">
+          <h2 class="harapan-block__title" id="harapan-title">Harapan Saya sebagai Guru</h2>
+          <div class="harapan-block__text" id="harapan-text">
+            [ Tuliskan harapan-harapan pribadi yang ingin Anda wujudkan ketika kelak menjalankan
+            profesi guru. Apa dampak yang ingin Anda berikan kepada peserta didik, sekolah,
+            dan masyarakat? Buat singkat dan personal. ]
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUOTE PENUTUP
+    ============================================================ -->
+    <section class="quote-section" aria-label="Kutipan penutup">
+      <div class="quote-section__inner">
+        <div style="font-size:1.5rem; opacity:0.18; margin-bottom:var(--space-4); letter-spacing:0.6em;" aria-hidden="true">武 道 義</div>
+        <p class="quote-section__text fade-up" id="model-guru-quote">
+          "Menjadi guru bukan hanya tentang mengajar, tetapi juga tentang terus belajar,
+          memahami, dan memberikan yang terbaik bagi peserta didik."
+        </p>
+        <p class="quote-section__attr fade-up delay-2" id="model-guru-attr">Mahasiswa PPG</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top: var(--space-3);">
+          <span id="footer-prodi"></span>
+          <span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const p  = DATA.profil;
+      const mg = DATA.modelGuru;
+
+      document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+      // ── Gambaran guru ─────────────────────────────────────────
+      const gambaranEl = document.getElementById('gambaran-text');
+      if (gambaranEl && mg.gambaran) gambaranEl.textContent = mg.gambaran;
+
+      // ── Prinsip cards ─────────────────────────────────────────
+      const prinsipGrid = document.getElementById('prinsip-grid');
+      if (prinsipGrid && mg.prinsip) {
+        mg.prinsip.forEach((item, i) => {
+          const delay = (i % 3) + 1;
+          const card  = document.createElement('div');
+          card.className = `prinsip-card fade-up delay-${delay}`;
+          card.innerHTML = `
+            <div class="prinsip-card__ikon" aria-hidden="true">${item.ikon}</div>
+            <h3 class="prinsip-card__judul">${item.judul}</h3>
+            <p class="prinsip-card__isi">${item.isi}</p>
+          `;
+          prinsipGrid.appendChild(card);
+        });
+      }
+
+      // ── Filosofi ──────────────────────────────────────────────
+      const filosofiEl = document.getElementById('filosofi-text');
+      if (filosofiEl && mg.filosofi) filosofiEl.textContent = mg.filosofi;
+
+      // ── Harapan ───────────────────────────────────────────────
+      const harapanEl = document.getElementById('harapan-text');
+      if (harapanEl && mg.harapan) harapanEl.textContent = mg.harapan;
+
+      // ── Quote ─────────────────────────────────────────────────
+      if (mg.quote) document.getElementById('model-guru-quote').textContent = mg.quote;
+      document.getElementById('model-guru-attr').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+      // ── Footer ────────────────────────────────────────────────
+      document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+      document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+      document.getElementById('footer-univ').textContent      = p.universitas  || '';
+      document.getElementById('footer-copyright').textContent =
+        '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+
+      const social = document.getElementById('footer-social');
+      if (p.email && !p.email.includes('[')) {
+        const a = document.createElement('a');
+        a.href = 'https://mail.google.com/mail/?view=cm&to=' + p.email; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.innerHTML = '✉ Email'; social.appendChild(a);
+      }
+      if (p.instagram && !p.instagram.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.instagram; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = '⊙ Instagram'; social.appendChild(a);
+      }
+      if (p.linkedin && !p.linkedin.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.linkedin; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = '⊞ LinkedIn'; social.appendChild(a);
+      }
+    });
+  </script>
+
+</body>
+</html>

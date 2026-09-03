@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ujian Tengah Semester (UTS) PPG — Produk Terbaik Praktik Mengajar Mandiri" />
+  <title>UTS — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── UTS LAYOUT ────────────────────────────────────────── */
+    .uts-container {
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+      padding-block: var(--space-16);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-16);
+    }
+
+    /* ── SECTION WRAPPER ────────────────────────────────────── */
+    .uts-section {
+      scroll-margin-top: calc(var(--navbar-height) + 24px);
+    }
+
+    /* Nomor besar dekoratif */
+    .uts-section__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+
+    .uts-section__num {
+      font-family: var(--font-serif);
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1;
+      color: var(--color-primary);
+      opacity: 0.12;
+      user-select: none;
+      min-width: 60px;
+    }
+
+    .uts-section__head { flex: 1; }
+
+    .uts-section__label {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+
+    .uts-section__title {
+      font-family: var(--font-serif);
+      font-size: clamp(var(--text-xl), 3vw, var(--text-3xl));
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      line-height: 1.25;
+    }
+
+    /* Garis dekoratif bawah judul */
+    .uts-section__title-bar {
+      width: 56px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      border-radius: 0;
+      margin-top: var(--space-3);
+    }
+
+    /* ── KONTEN SECTION ─────────────────────────────────────── */
+    .uts-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+      align-items: start;
+    }
+
+    .uts-body--full {
+      grid-template-columns: 1fr;
+    }
+
+    /* Blok kiri: deskripsi + judul produk */
+    .uts-info-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-top: 3px solid var(--color-primary);
+      border-radius: var(--radius-md);
+      padding: var(--space-6);
+      height: 100%;
+    }
+
+    .uts-info-card__title-label {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-2);
+    }
+
+    .uts-info-card__title {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      line-height: 1.35;
+      margin-bottom: var(--space-5);
+      padding-bottom: var(--space-4);
+      border-bottom: 1px dashed var(--color-border);
+    }
+
+    .uts-info-card__desc-label {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-2);
+    }
+
+    .uts-info-card__desc {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* Blok kanan: embed dokumen/video */
+    .uts-embed-card {
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .uts-embed-card__label {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border-light);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary-dark);
+    }
+
+    .uts-embed-card__frame iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      display: block;
+    }
+
+    .uts-embed-card__placeholder {
+      height: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      padding: var(--space-6);
+      text-align: center;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+    }
+
+    .uts-embed-card__placeholder-icon { font-size: 2.5rem; opacity: 0.3; }
+
+    .uts-embed-card__placeholder-hint {
+      font-size: var(--text-xs);
+      color: var(--color-text-light);
+      font-family: var(--font-sans);
+      background: var(--color-white);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      border: 1px dashed var(--color-border);
+    }
+
+    /* ── ANALISIS BOX ───────────────────────────────────────── */
+    .uts-analisis {
+      margin-top: var(--space-6);
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      overflow: hidden;
+    }
+
+    .uts-analisis__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border-light);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-primary-dark);
+    }
+
+    .uts-analisis__icon { color: var(--color-accent); }
+
+    .uts-analisis__body {
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      white-space: pre-line;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .uts-analisis__body.placeholder {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    /* ── DIVIDER ANTARSECTION ───────────────────────────────── */
+    .uts-divider {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      opacity: 0.3;
+    }
+
+    .uts-divider::before,
+    .uts-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+    }
+
+    .uts-divider__icon {
+      font-size: 1.2rem;
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+
+    /* ── JUMP NAV ───────────────────────────────────────────── */
+    .uts-jumpnav {
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      margin-bottom: var(--space-6);
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .uts-body { grid-template-columns: 1fr; }
+      .uts-section__num { font-size: 3rem; }
+    }
+
+    @media (max-width: 768px) {
+      .uts-container { padding-block: var(--space-10); gap: var(--space-10); }
+      .uts-embed-card__frame iframe { height: 280px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"          class="navbar__link active">UTS</a>
+        <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+        <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"        class="navbar__link">Home</a>
+    <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"          class="navbar__link active">UTS</a>
+    <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+    <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Ujian Tengah Semester (UTS)</span>
+        </nav>
+        <p class="page-header__label">UTS · PPG Prajabatan</p>
+        <h1 class="page-header__title">Ujian Tengah Semester</h1>
+        <p class="page-header__subtitle">
+          Produk rancangan pembelajaran terbaik dan video pelaksanaan
+          praktik mengajar mandiri siklus 1 beserta analisis mendalamnya.
+        </p>
+        <div style="display:flex; gap:var(--space-3); margin-top:var(--space-6); flex-wrap:wrap;">
+          <a href="index.html" class="btn btn--outline btn--sm" style="color:#E8E4DC; border-color:rgba(232,228,220,0.4);">
+            ← Beranda
+          </a>
+          <a href="lk3.html" class="btn btn--outline btn--sm" style="color:#E8E4DC; border-color:rgba(232,228,220,0.4);">
+            LK 3 PPL Mandiri
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="uts-container">
+
+      <!-- Jump nav -->
+      <div class="uts-jumpnav fade-up">
+        <a href="#uts-rancangan" class="btn btn--outline btn--sm">↓ Produk Rancangan</a>
+        <a href="#uts-video"     class="btn btn--outline btn--sm">↓ Video Praktik Mengajar</a>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 1 — PRODUK RANCANGAN PEMBELAJARAN TERBAIK
+      ══════════════════════════════════════════════════════ -->
+      <section class="uts-section fade-up" id="uts-rancangan" aria-labelledby="uts-title-rancangan">
+
+        <div class="uts-section__eyebrow">
+          <span class="uts-section__num" aria-hidden="true">01</span>
+          <div class="uts-section__head">
+            <div class="uts-section__label">Komponen UTS 1 · Produk Terbaik</div>
+            <h2 class="uts-section__title" id="uts-title-rancangan">
+              Produk Rancangan / Perencanaan Pembelajaran Terbaik
+            </h2>
+            <div class="uts-section__title-bar"></div>
+          </div>
+        </div>
+
+        <div class="uts-body">
+          <!-- Info + Deskripsi -->
+          <div class="uts-info-card fade-up delay-1">
+            <div class="uts-info-card__title-label">Judul Produk</div>
+            <div class="uts-info-card__title" id="uts-judul-rancangan">
+              [ Judul rancangan akan muncul di sini ]
+            </div>
+            <div class="uts-info-card__desc-label">Deskripsi Produk</div>
+            <p class="uts-info-card__desc" id="uts-desc-rancangan">
+              [ Deskripsi produk rancangan ]
+            </p>
+          </div>
+
+          <!-- Embed Dokumen -->
+          <div class="uts-embed-card fade-up delay-2">
+            <div class="uts-embed-card__label">
+              <span>📄</span> Dokumen Rancangan Pembelajaran
+            </div>
+            <div class="uts-embed-card__frame" id="uts-frame-rancangan">
+              <div class="uts-embed-card__placeholder">
+                <span class="uts-embed-card__placeholder-icon">📄</span>
+                <span>Dokumen belum tersedia</span>
+                <span class="uts-embed-card__placeholder-hint">
+                  Isi <code>DATA.uts.rancangan.linkDokumen</code> di <code>js/data.js</code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis -->
+        <div class="uts-analisis fade-up delay-3">
+          <div class="uts-analisis__header">
+            <span class="uts-analisis__icon">◈</span>
+            Analisis Mendalam
+          </div>
+          <div class="uts-analisis__body" id="uts-analisis-rancangan"></div>
+        </div>
+
+      </section>
+
+      <!-- Divider -->
+      <div class="uts-divider fade-up" aria-hidden="true">
+        <span class="uts-divider__icon">⚔</span>
+      </div>
+
+      <!-- ══════════════════════════════════════════════════════
+           SECTION 2 — VIDEO PELAKSANAAN PRAKTIK MENGAJAR
+      ══════════════════════════════════════════════════════ -->
+      <section class="uts-section fade-up" id="uts-video" aria-labelledby="uts-title-video">
+
+        <div class="uts-section__eyebrow">
+          <span class="uts-section__num" aria-hidden="true">02</span>
+          <div class="uts-section__head">
+            <div class="uts-section__label">Komponen UTS 2 · Video Praktik</div>
+            <h2 class="uts-section__title" id="uts-title-video">
+              Produk Video Pelaksanaan Praktik Mengajar Mandiri
+            </h2>
+            <div class="uts-section__title-bar"></div>
+          </div>
+        </div>
+
+        <div class="uts-body">
+          <!-- Info + Deskripsi -->
+          <div class="uts-info-card fade-up delay-1">
+            <div class="uts-info-card__title-label">Judul Video</div>
+            <div class="uts-info-card__title" id="uts-judul-video">
+              [ Judul video akan muncul di sini ]
+            </div>
+            <div class="uts-info-card__desc-label">Deskripsi Video</div>
+            <p class="uts-info-card__desc" id="uts-desc-video">
+              [ Deskripsi video praktik mengajar ]
+            </p>
+          </div>
+
+          <!-- Embed Video -->
+          <div class="uts-embed-card fade-up delay-2">
+            <div class="uts-embed-card__label">
+              <span>🎥</span> Video Pelaksanaan Praktik Mengajar
+            </div>
+            <div class="uts-embed-card__frame" id="uts-frame-video">
+              <div class="uts-embed-card__placeholder">
+                <span class="uts-embed-card__placeholder-icon">🎥</span>
+                <span>Video belum tersedia</span>
+                <span class="uts-embed-card__placeholder-hint">
+                  Isi <code>DATA.uts.video.linkVideo</code> di <code>js/data.js</code>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analisis -->
+        <div class="uts-analisis fade-up delay-3">
+          <div class="uts-analisis__header">
+            <span class="uts-analisis__icon">◈</span>
+            Analisis Mendalam
+          </div>
+          <div class="uts-analisis__body" id="uts-analisis-video"></div>
+        </div>
+
+      </section>
+
+    </div><!-- /uts-container -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top: var(--space-3);">
+          <span id="footer-prodi"></span>
+          <span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const p   = DATA.profil;
+    const uts = DATA.uts;
+
+    /* ── Navbar brand ── */
+    document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+    /* ── Helper: konversi link ke embed ── */
+    function toEmbed(frameId, link, label) {
+      const frame = document.getElementById(frameId);
+      if (!frame || !link || link.trim() === '') return;
+      const lower = link.toLowerCase();
+
+      /* YouTube */
+      const yt = link.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([\w-]+)/);
+      if (yt) {
+        frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${yt[1]}"
+          allowfullscreen title="${label}" loading="lazy"></iframe>`;
+        return;
+      }
+      /* Gambar langsung */
+      if (/\.(jpe?g|png|gif|webp)(\?|$)/.test(lower)) {
+        frame.innerHTML = `
+          <div style="padding:var(--space-4); background:#fff; border-radius:var(--radius-md);">
+            <img src="${link}" alt="${label}"
+              style="max-width:100%; max-height:480px; display:block; margin:0 auto;
+                     border-radius:var(--radius-md); box-shadow: var(--shadow-md);"
+              loading="lazy" />
+          </div>`;
+        return;
+      }
+      /* Google Drive */
+      if (link.includes('drive.google.com')) {
+        const gd = link.match(/\/d\/([\w-]+)/);
+        if (gd) {
+          frame.innerHTML = `<iframe src="https://drive.google.com/file/d/${gd[1]}/preview"
+            allowfullscreen title="${label}" loading="lazy"></iframe>`;
+        }
+        return;
+      }
+      /* Google Slides */
+      if (link.includes('docs.google.com/presentation')) {
+        const sl = link.match(/\/d\/([\w-]+)/);
+        if (sl) {
+          frame.innerHTML = `<iframe
+            src="https://docs.google.com/presentation/d/${sl[1]}/embed?start=false&loop=false"
+            allowfullscreen title="${label}" loading="lazy"></iframe>`;
+        }
+        return;
+      }
+      /* PowerPoint langsung */
+      if (/\.pptx?(\?|$)/.test(lower)) {
+        frame.innerHTML = `<iframe
+          src="https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(link)}"
+          allowfullscreen title="${label}" loading="lazy"></iframe>`;
+        return;
+      }
+      /* PDF atau fallback */
+      frame.innerHTML = `<iframe src="${link}"
+        allowfullscreen title="${label}" loading="lazy"></iframe>`;
+    }
+
+    /* ── Isi placeholder helper ── */
+    function setEl(id, val, fallback) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const v = (val && !val.startsWith('[')) ? val : (fallback || '');
+      el.textContent = v;
+      if (!val || val.startsWith('[')) el.style.color = 'var(--color-text-light)';
+    }
+
+    function setEmbed(frameId, link, icon, label) {
+      toEmbed(frameId, link, label);
+    }
+
+    function setAnalisis(id, val) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = val || '';
+      if (!val || val.startsWith('[')) el.classList.add('placeholder');
+    }
+
+    /* ── Section 1: Rancangan ── */
+    const r = uts.rancangan;
+    setEl('uts-judul-rancangan',    r.judul,       '[ Judul Rancangan Pembelajaran Terbaik ]');
+    setEl('uts-desc-rancangan',     r.deskripsi,   '[ Deskripsi produk rancangan ]');
+    setEmbed('uts-frame-rancangan', r.linkDokumen, '📄', 'Dokumen Rancangan Pembelajaran');
+    setAnalisis('uts-analisis-rancangan', r.analisis);
+
+    /* ── Section 2: Video ── */
+    const v = uts.video;
+    setEl('uts-judul-video',    v.judul,     '[ Judul Video Praktik Mengajar ]');
+    setEl('uts-desc-video',     v.deskripsi, '[ Deskripsi video praktik mengajar ]');
+    setEmbed('uts-frame-video', v.linkVideo, '🎥', 'Video Pelaksanaan Praktik Mengajar');
+    setAnalisis('uts-analisis-video', v.analisis);
+
+    /* ── Footer ── */
+    document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+    document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+    document.getElementById('footer-univ').textContent      = p.universitas  || '';
+    document.getElementById('footer-copyright').textContent = '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+
+    const social = document.getElementById('footer-social');
+    if (p.email && !p.email.includes('[')) {
+      const a = document.createElement('a');
+      a.href = 'https://mail.google.com/mail/?view=cm&to=' + p.email;
+      a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.innerHTML = '✉ Email'; social.appendChild(a);
+    }
+    if (p.instagram && !p.instagram.includes('[')) {
+      const a = document.createElement('a');
+      a.href = p.instagram; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.textContent = '⊙ Instagram'; social.appendChild(a);
+    }
+  });
+  </script>
+
+</body>
+</html>

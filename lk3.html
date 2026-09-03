@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LK 3 PPL Mandiri — Analisis Praktik Mengajar Mandiri" />
+  <title>LK 3 PPL Mandiri — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── SECTION NAV (sub-menu sticky kiri / top) ──────────── */
+    .lk3-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-10);
+      align-items: start;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+      padding-block: var(--space-12);
+    }
+
+    /* Sidebar sub-nav */
+    .lk3-sidenav {
+      position: sticky;
+      top: calc(var(--navbar-height) + 16px);
+    }
+
+    .lk3-sidenav__title {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-3);
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .lk3-sidenav__list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+
+    .lk3-sidenav__link {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      transition: all 0.18s ease;
+      border-left: 3px solid transparent;
+    }
+
+    .lk3-sidenav__link:hover {
+      background-color: var(--color-bg-alt);
+      color: var(--color-primary);
+      border-left-color: var(--color-primary);
+    }
+
+    .lk3-sidenav__link.active {
+      background-color: var(--color-bg-alt);
+      color: var(--color-primary);
+      border-left-color: var(--color-primary);
+      font-weight: 600;
+    }
+
+    .lk3-sidenav__num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: var(--radius-sm);
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    /* ── SECTION CARD ───────────────────────────────────────── */
+    .lk3-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-10);
+    }
+
+    .lk3-section {
+      scroll-margin-top: calc(var(--navbar-height) + 24px);
+    }
+
+    .lk3-section__header {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-4);
+      border-bottom: 2px solid var(--color-border-light);
+    }
+
+    .lk3-section__badge {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      background: var(--color-primary);
+      color: #E8E4DC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+
+    .lk3-section__titles { flex: 1; }
+
+    .lk3-section__label {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-1);
+    }
+
+    .lk3-section__title {
+      font-family: var(--font-serif);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      line-height: 1.3;
+    }
+
+    /* ── DESKRIPSI ──────────────────────────────────────────── */
+    .lk3-desc {
+      background: var(--color-bg);
+      border-left: 3px solid var(--color-primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--space-4) var(--space-5);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin-bottom: var(--space-5);
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    /* ── EMBED BOX ──────────────────────────────────────────── */
+    .lk3-embed {
+      margin-bottom: var(--space-5);
+    }
+
+    .lk3-embed__label {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-3);
+    }
+
+    .lk3-embed__frame {
+      width: 100%;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+      overflow: hidden;
+      background: var(--color-bg-alt);
+    }
+
+    .lk3-embed__frame iframe {
+      width: 100%;
+      height: 480px;
+      border: none;
+      display: block;
+    }
+
+    .lk3-embed__video iframe {
+      height: 400px;
+    }
+
+    .lk3-embed__placeholder {
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-3);
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      text-align: center;
+      padding: var(--space-6);
+    }
+
+    .lk3-embed__placeholder-icon {
+      font-size: 2.5rem;
+      opacity: 0.35;
+    }
+
+    .lk3-embed__placeholder-hint {
+      font-size: var(--text-xs);
+      color: var(--color-text-light);
+      font-family: var(--font-sans);
+      background: var(--color-bg);
+      padding: var(--space-2) var(--space-4);
+      border-radius: var(--radius-full);
+      border: 1px dashed var(--color-border);
+    }
+
+    /* ── ANALISIS BOX ───────────────────────────────────────── */
+    .lk3-analisis {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-top: 3px solid var(--color-primary);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .lk3-analisis__header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3) var(--space-5);
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border-light);
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-primary-dark);
+    }
+
+    .lk3-analisis__icon { color: var(--color-accent); }
+
+    .lk3-analisis__body {
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      white-space: pre-line;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .lk3-analisis__body.placeholder {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    /* ── INFO SEKOLAH (di bawah page-header) ────────────────── */
+    .lk3-meta-bar {
+      background: var(--color-white);
+      border-bottom: 1px solid var(--color-border-light);
+      padding-block: var(--space-3);
+    }
+
+    .lk3-meta-bar__inner {
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+      align-items: center;
+    }
+
+    .lk3-meta-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+    }
+
+    .lk3-meta-item__icon { color: var(--color-accent); font-size: 0.9rem; }
+    .lk3-meta-item__val  { font-weight: 600; color: var(--color-text); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .lk3-layout { grid-template-columns: 1fr; }
+      .lk3-sidenav { position: static; }
+      .lk3-sidenav__list { flex-direction: row; flex-wrap: wrap; gap: var(--space-2); }
+      .lk3-sidenav__link { border-left: none; border-bottom: 2px solid transparent; border-radius: var(--radius-sm); }
+      .lk3-sidenav__link:hover,
+      .lk3-sidenav__link.active { border-left: none; border-bottom-color: var(--color-primary); }
+    }
+
+    @media (max-width: 768px) {
+      .lk3-meta-bar__inner { gap: var(--space-4); }
+      .lk3-embed__frame iframe { height: 320px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"          class="navbar__link active">LK 3 PPL Mandiri</a>
+        <a href="uts.html"          class="navbar__link">UTS</a>
+        <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+        <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"        class="navbar__link">Home</a>
+    <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"          class="navbar__link active">LK 3 PPL Mandiri</a>
+    <a href="uts.html"          class="navbar__link">UTS</a>
+    <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+    <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>LK 3 PPL Mandiri</span>
+        </nav>
+        <p class="page-header__label">Lembar Kerja 3 · PPL Mandiri</p>
+        <h1 class="page-header__title">LK 3 PPL Mandiri</h1>
+        <p class="page-header__subtitle">
+          Analisis sistematis terhadap seluruh komponen praktik mengajar mandiri:
+          rancangan, materi, media, video, kegiatan nonmengajar, dan penilaian.
+        </p>
+        <div style="margin-top: var(--space-6);">
+          <a href="index.html" class="btn btn--outline btn--sm" style="color:#E8E4DC; border-color:rgba(232,228,220,0.4);">
+            ← Kembali ke Beranda
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- META BAR -->
+    <div class="lk3-meta-bar" id="lk3-meta-bar">
+      <div class="lk3-meta-bar__inner">
+        <div class="lk3-meta-item">
+          <span class="lk3-meta-item__icon">🏫</span>
+          <span>Sekolah:</span>
+          <span class="lk3-meta-item__val" id="meta-sekolah">SMP Negeri 12 Surabaya</span>
+        </div>
+        <div class="lk3-meta-item">
+          <span class="lk3-meta-item__icon">📚</span>
+          <span>Mata Pelajaran:</span>
+          <span class="lk3-meta-item__val" id="meta-mapel">Informatika</span>
+        </div>
+        <div class="lk3-meta-item">
+          <span class="lk3-meta-item__icon">🎓</span>
+          <span>Kelas:</span>
+          <span class="lk3-meta-item__val" id="meta-kelas">IX</span>
+        </div>
+        <div class="lk3-meta-item">
+          <span class="lk3-meta-item__icon">📅</span>
+          <span>Tahun Ajaran:</span>
+          <span class="lk3-meta-item__val" id="meta-tahun">2025/2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="lk3-layout">
+
+      <!-- SIDEBAR SUB-NAV -->
+      <aside class="lk3-sidenav fade-up" aria-label="Sub-navigasi LK 3">
+        <div class="lk3-sidenav__title">Komponen LK 3</div>
+        <ul class="lk3-sidenav__list" role="list">
+          <li>
+            <a href="#rancangan" class="lk3-sidenav__link active">
+              <span class="lk3-sidenav__num">1</span>
+              Rancangan Pembelajaran
+            </a>
+          </li>
+          <li>
+            <a href="#materi" class="lk3-sidenav__link">
+              <span class="lk3-sidenav__num">2</span>
+              Materi Pembelajaran
+            </a>
+          </li>
+          <li>
+            <a href="#media" class="lk3-sidenav__link">
+              <span class="lk3-sidenav__num">3</span>
+              Media Pembelajaran
+            </a>
+          </li>
+          <li>
+            <a href="#video" class="lk3-sidenav__link">
+              <span class="lk3-sidenav__num">4</span>
+              Video Praktik Mengajar
+            </a>
+          </li>
+          <li>
+            <a href="#nonmengajar" class="lk3-sidenav__link">
+              <span class="lk3-sidenav__num">5</span>
+              Kegiatan Nonmengajar
+            </a>
+          </li>
+          <li>
+            <a href="#penilaian" class="lk3-sidenav__link">
+              <span class="lk3-sidenav__num">6</span>
+              Instrumen Penilaian
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- KONTEN UTAMA -->
+      <div class="lk3-content">
+
+        <!-- ── 1. RANCANGAN PEMBELAJARAN ──────────────────── -->
+        <section class="lk3-section fade-up delay-1" id="rancangan" aria-labelledby="title-rancangan">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">1</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 1</div>
+              <h2 class="lk3-section__title" id="title-rancangan">
+                Analisis Produk Rancangan Pembelajaran
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="desc-rancangan"></p>
+
+          <div class="lk3-embed" id="embed-rancangan">
+            <div class="lk3-embed__label">📄 Dokumen Rancangan Pembelajaran</div>
+            <div class="lk3-embed__frame" id="frame-rancangan">
+              <div class="lk3-embed__placeholder">
+                <span class="lk3-embed__placeholder-icon">📄</span>
+                <span>Dokumen belum tersedia</span>
+                <span class="lk3-embed__placeholder-hint">
+                  Isi <code>DATA.lk3.rancangan.linkDokumen</code> dengan link Google Drive, URL PDF, gambar (jpg/png), atau file PowerPoint
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header">
+              <span class="lk3-analisis__icon">◈</span>
+              Narasi Analisis
+            </div>
+            <div class="lk3-analisis__body" id="analisis-rancangan"></div>
+          </div>
+        </section>
+
+        <!-- ── 2. MATERI PEMBELAJARAN ─────────────────────── -->
+        <section class="lk3-section fade-up" id="materi" aria-labelledby="title-materi">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">2</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 2</div>
+              <h2 class="lk3-section__title" id="title-materi">
+                Analisis Materi Pembelajaran
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="desc-materi"></p>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header">
+              <span class="lk3-analisis__icon">◈</span>
+              Narasi Analisis
+            </div>
+            <div class="lk3-analisis__body" id="analisis-materi"></div>
+          </div>
+        </section>
+
+        <!-- ── 3. MEDIA PEMBELAJARAN ──────────────────────── -->
+        <section class="lk3-section fade-up" id="media" aria-labelledby="title-media">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">3</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 3</div>
+              <h2 class="lk3-section__title" id="title-media">
+                Analisis Media Pembelajaran
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="desc-media"></p>
+
+          <div class="lk3-embed">
+            <div class="lk3-embed__label">🖼️ Dokumen / Tampilan Media Pembelajaran</div>
+            <div class="lk3-embed__frame" id="frame-media">
+              <div class="lk3-embed__placeholder">
+                <span class="lk3-embed__placeholder-icon">🖼️</span>
+                <span>Dokumen belum tersedia</span>
+                <span class="lk3-embed__placeholder-hint">
+                  Isi <code>DATA.lk3.media.linkDokumen</code> dengan link Google Drive, URL PDF, gambar (jpg/png), Google Slides, atau PowerPoint
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header">
+              <span class="lk3-analisis__icon">◈</span>
+              Narasi Analisis
+            </div>
+            <div class="lk3-analisis__body" id="analisis-media"></div>
+          </div>
+        </section>
+
+        <!-- ── 4. VIDEO PRAKTIK MENGAJAR ──────────────────── -->
+        <section class="lk3-section fade-up" id="video" aria-labelledby="title-video">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">4</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 4</div>
+              <h2 class="lk3-section__title" id="title-video">
+                Analisis Video Pelaksanaan Praktik Mengajar Mandiri
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="desc-video"></p>
+
+          <div class="lk3-embed">
+            <div class="lk3-embed__label">🎥 Video Pelaksanaan Praktik Mengajar</div>
+            <div class="lk3-embed__frame lk3-embed__video" id="frame-video">
+              <div class="lk3-embed__placeholder">
+                <span class="lk3-embed__placeholder-icon">🎥</span>
+                <span>Video belum tersedia</span>
+                <span class="lk3-embed__placeholder-hint">
+                  Isi <code>DATA.lk3.video.linkVideo</code> dengan link YouTube atau Google Drive
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header">
+              <span class="lk3-analisis__icon">◈</span>
+              Narasi Analisis
+            </div>
+            <div class="lk3-analisis__body" id="analisis-video"></div>
+          </div>
+        </section>
+
+        <!-- ── 5. KEGIATAN NONMENGAJAR ────────────────────── -->
+        <section class="lk3-section fade-up" id="nonmengajar" aria-labelledby="title-nonmengajar">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">5</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 5</div>
+              <h2 class="lk3-section__title" id="title-nonmengajar">
+                Analisis Kegiatan Nonmengajar
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="desc-nonmengajar"></p>
+
+          <div class="lk3-embed">
+            <div class="lk3-embed__label">📋 Dokumen Kegiatan Nonmengajar</div>
+            <div class="lk3-embed__frame" id="frame-nonmengajar">
+              <div class="lk3-embed__placeholder">
+                <span class="lk3-embed__placeholder-icon">📋</span>
+                <span>Dokumen belum tersedia</span>
+                <span class="lk3-embed__placeholder-hint">
+                  Isi <code>DATA.lk3.nonMengajar.linkDokumen</code> dengan link Google Drive, URL PDF, atau gambar (jpg/png)
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header">
+              <span class="lk3-analisis__icon">◈</span>
+              Narasi Analisis
+            </div>
+            <div class="lk3-analisis__body" id="analisis-nonmengajar"></div>
+          </div>
+        </section>
+
+        <!-- ── 6. INSTRUMEN PENILAIAN ─────────────────────── -->
+        <section class="lk3-section fade-up" id="penilaian" aria-labelledby="title-penilaian">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">6</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 6</div>
+              <h2 class="lk3-section__title" id="title-penilaian">
+                Instrumen Penilaian beserta Analisisnya
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="desc-penilaian"></p>
+
+          <div class="lk3-embed">
+            <div class="lk3-embed__label">📊 Dokumen Instrumen Penilaian</div>
+            <div class="lk3-embed__frame" id="frame-penilaian">
+              <div class="lk3-embed__placeholder">
+                <span class="lk3-embed__placeholder-icon">📊</span>
+                <span>Dokumen belum tersedia</span>
+                <span class="lk3-embed__placeholder-hint">
+                  Isi <code>DATA.lk3.penilaian.linkDokumen</code> dengan link Google Drive, URL PDF, gambar (jpg/png), atau PowerPoint
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header">
+              <span class="lk3-analisis__icon">◈</span>
+              Narasi Analisis
+            </div>
+            <div class="lk3-analisis__body" id="analisis-penilaian"></div>
+          </div>
+        </section>
+
+      </div><!-- /lk3-content -->
+    </div><!-- /lk3-layout -->
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top: var(--space-3);">
+          <span id="footer-prodi"></span>
+          <span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const p  = DATA.profil;
+    const lk = DATA.lk3;
+
+    /* ── Navbar brand ── */
+    document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+    /* ── Meta bar ── */
+    document.getElementById('meta-sekolah').textContent = lk.sekolah       || '';
+    document.getElementById('meta-mapel').textContent   = lk.mataPelajaran || '';
+    document.getElementById('meta-kelas').textContent   = lk.kelas         || '';
+    document.getElementById('meta-tahun').textContent   = lk.tahunAjaran   || '';
+
+    /* ── Helper: isi deskripsi & analisis ── */
+    function isi(idDesc, idAnalisis, sectionData, iconEmbed, labelEmbed, idFrame, linkKey) {
+      const s = sectionData;
+
+      /* Deskripsi */
+      const descEl = document.getElementById(idDesc);
+      if (descEl) {
+        descEl.textContent = s.deskripsi || '';
+        if (!s.deskripsi || s.deskripsi.startsWith('[')) {
+          descEl.classList.add('refl-placeholder');
+        }
+      }
+
+      /* Embed — hanya jika idFrame tersedia (komponen 2 tidak punya frame) */
+      const frameEl = idFrame ? document.getElementById(idFrame) : null;
+      const link    = s[linkKey] || '';
+
+      if (frameEl && link.trim() !== '') {
+        const lower = link.toLowerCase();
+
+        /* ── 1. YouTube ── */
+        const ytMatch = link.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([\w-]+)/);
+        if (ytMatch) {
+          frameEl.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytMatch[1]}"
+            allowfullscreen title="${labelEmbed}" loading="lazy"></iframe>`;
+
+        /* ── 2. Gambar langsung (jpg, jpeg, png, gif, webp) ── */
+        } else if (/\.(jpe?g|png|gif|webp)(\?|$)/.test(lower)) {
+          frameEl.innerHTML = `
+            <div style="padding:var(--space-4); background:#fff; border-radius:var(--radius-md);">
+              <img src="${link}" alt="${labelEmbed}"
+                style="max-width:100%; max-height:520px; display:block; margin:0 auto;
+                       border-radius:var(--radius-md); box-shadow: var(--shadow-md);"
+                loading="lazy" />
+            </div>`;
+
+        /* ── 3. Google Drive file ── */
+        } else if (link.includes('drive.google.com')) {
+          const gdMatch = link.match(/\/d\/([\w-]+)/);
+          if (gdMatch) {
+            frameEl.innerHTML = `<iframe src="https://drive.google.com/file/d/${gdMatch[1]}/preview"
+              allowfullscreen title="${labelEmbed}" loading="lazy"></iframe>`;
+          }
+
+        /* ── 4. Google Slides (presentasi) ── */
+        } else if (link.includes('docs.google.com/presentation')) {
+          const slMatch = link.match(/\/d\/([\w-]+)/);
+          if (slMatch) {
+            frameEl.innerHTML = `<iframe
+              src="https://docs.google.com/presentation/d/${slMatch[1]}/embed?start=false&loop=false"
+              allowfullscreen title="${labelEmbed}" loading="lazy"></iframe>`;
+          }
+
+        /* ── 5. File .pptx / .ppt langsung via Office Online Viewer ── */
+        } else if (/\.pptx?(\?|$)/.test(lower)) {
+          const encoded = encodeURIComponent(link);
+          frameEl.innerHTML = `<iframe
+            src="https://view.officeapps.live.com/op/embed.aspx?src=${encoded}"
+            allowfullscreen title="${labelEmbed}" loading="lazy"></iframe>`;
+
+        /* ── 6. File .pdf langsung ── */
+        } else if (/\.pdf(\?|$)/.test(lower)) {
+          frameEl.innerHTML = `<iframe src="${link}"
+            allowfullscreen title="${labelEmbed}" loading="lazy"></iframe>`;
+
+        /* ── 7. Fallback: coba embed langsung ── */
+        } else {
+          frameEl.innerHTML = `<iframe src="${link}"
+            allowfullscreen title="${labelEmbed}" loading="lazy"></iframe>`;
+        }
+      }
+
+      /* Analisis */
+      const analEl = document.getElementById(idAnalisis);
+      if (analEl) {
+        analEl.textContent = s.analisis || '';
+        if (!s.analisis || s.analisis.startsWith('[')) {
+          analEl.classList.add('placeholder');
+        }
+      }
+    }
+
+    /* Komponen 2 (materi) tidak punya frame — kirim null */
+    isi('desc-rancangan',   'analisis-rancangan',   lk.rancangan,   '📄', 'Rancangan Pembelajaran', 'frame-rancangan',   'linkDokumen');
+    isi('desc-materi',      'analisis-materi',      lk.materi,      '📑', 'Materi Pembelajaran',    null,                'linkDokumen');
+    isi('desc-media',       'analisis-media',       lk.media,       '🖼️', 'Media Pembelajaran',     'frame-media',       'linkDokumen');
+    isi('desc-video',       'analisis-video',       lk.video,       '🎥', 'Video Praktik Mengajar', 'frame-video',       'linkVideo');
+    isi('desc-nonmengajar', 'analisis-nonmengajar', lk.nonMengajar, '📋', 'Kegiatan Nonmengajar',  'frame-nonmengajar', 'linkDokumen');
+    isi('desc-penilaian',   'analisis-penilaian',   lk.penilaian,   '📊', 'Instrumen Penilaian',   'frame-penilaian',   'linkDokumen');
+
+    /* ── Sidebar active state saat scroll ── */
+    const sections = document.querySelectorAll('.lk3-section');
+    const navLinks = document.querySelectorAll('.lk3-sidenav__link');
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(l) { l.classList.remove('active'); });
+          const active = document.querySelector('.lk3-sidenav__link[href="#' + entry.target.id + '"]');
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function(s) { observer.observe(s); });
+
+    /* ── Footer ── */
+    document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+    document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+    document.getElementById('footer-univ').textContent      = p.universitas  || '';
+    document.getElementById('footer-copyright').textContent = '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+
+    const social = document.getElementById('footer-social');
+    if (p.email && !p.email.includes('[')) {
+      const a = document.createElement('a');
+      a.href = 'https://mail.google.com/mail/?view=cm&to=' + p.email;
+      a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.innerHTML = '✉ Email'; social.appendChild(a);
+    }
+    if (p.instagram && !p.instagram.includes('[')) {
+      const a = document.createElement('a');
+      a.href = p.instagram; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.textContent = '⊙ Instagram'; social.appendChild(a);
+    }
+  });
+  </script>
+
+</body>
+</html>

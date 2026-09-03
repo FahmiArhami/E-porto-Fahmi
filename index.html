@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-Portfolio Mahasiswa PPG — Ruang Refleksi dan Dokumentasi Akademik" />
+  <title>E-Portfolio Mahasiswa PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"        class="navbar__link active">Home</a>
+        <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"          class="navbar__link">UTS</a>
+        <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+        <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Wave bar dekorasi Jepang -->
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <!-- Mobile Drawer -->
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"        class="navbar__link active">Home</a>
+    <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"          class="navbar__link">UTS</a>
+    <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+    <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================= -->
+    <section class="hero" aria-label="Pengenalan">
+      <!-- Ornamen samurai pojok -->
+      <div class="hero__sakura-corner" aria-hidden="true">⚔</div>
+      <div class="hero__inner">
+
+        <div class="hero__content">
+          <span class="hero__eyebrow fade-in">E-Portfolio Mahasiswa PPG</span>
+
+          <h1 class="hero__title fade-up delay-1">
+            E-Portfolio Mahasiswa<br>
+            <span>Pendidikan Profesi Guru</span>
+          </h1>
+
+          <p class="hero__subtitle fade-up delay-2">
+            Ruang untuk mengenal diri, merefleksikan pembelajaran, dan mendokumentasikan pengalaman selama mengikuti PPG.
+          </p>
+
+          <div class="hero__meta fade-up delay-3">
+            <div class="hero__meta-item">
+              <strong id="hero-nama">[ Nama Mahasiswa ]</strong>
+            </div>
+            <div class="hero__meta-item" id="hero-prodi">[ Bidang Studi ]</div>
+            <div class="hero__meta-item" id="hero-univ">[ Universitas / LPTK ]</div>
+            <div class="hero__meta-item" id="hero-tahun">[ Tahun PPG ]</div>
+          </div>
+
+          <div class="hero__actions fade-up delay-4">
+            <a href="profil.html" class="btn btn--primary btn--lg">Lihat Profil</a>
+            <a href="refleksi.html" class="btn btn--outline btn--lg">Lihat Refleksi</a>
+          </div>
+        </div>
+
+        <div class="hero__visual fade-in delay-2">
+          <div class="hero__photo-wrap">
+            <div class="hero__photo-placeholder" id="hero-photo-wrap">
+              <!-- Foto akan dimuat via JS -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              <span>Foto Mahasiswa</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PENGANTAR E-PORTFOLIO
+    ============================================================ -->
+    <section class="section section--white" aria-labelledby="pengantar-title">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Selamat Datang · ようこそ</span>
+          <h2 class="section-title" id="pengantar-title">Selamat Datang di E-Portfolio Saya</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div style="max-width: 680px; margin-inline: auto; text-align: center;" class="fade-up delay-2">
+          <p style="font-size: var(--text-md); color: var(--color-text-secondary); line-height: var(--leading-loose);">
+            E-portfolio ini menjadi ruang untuk memperkenalkan diri, mengenal latar belakang daerah asal,
+            melihat lingkungan perkuliahan, merefleksikan pembelajaran selama dua semester, serta menyimpan
+            dokumentasi kegiatan selama mengikuti Program Pendidikan Profesi Guru.
+          </p>
+          <p style="font-size: var(--text-md); color: var(--color-text-secondary); line-height: var(--leading-loose); margin-top: var(--space-4);">
+            Website ini disusun dengan harapan dapat menjadi catatan bermakna, bukan sekadar dokumen
+            akademik, melainkan refleksi nyata dari proses belajar menjadi seorang guru.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         NAVIGASI CEPAT — 6 CARD
+    ============================================================ -->
+    <section class="section" aria-labelledby="navcard-title">
+      <div class="container">
+        <div class="section-header fade-up">
+          <span class="section-label">Jelajahi · 探索</span>
+          <h2 class="section-title" id="navcard-title">Isi E-Portfolio</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="grid-3" id="navcard-grid">
+          <!-- Card 1: Profil Mahasiswa -->
+          <a href="profil.html" class="card card--clickable fade-up delay-1" aria-label="Profil Mahasiswa">
+            <div class="card__icon">👤</div>
+            <h3 class="card__title">Profil Mahasiswa</h3>
+            <p class="card__body">Mengenal identitas, latar belakang, dan asal daerah mahasiswa.</p>
+            <span class="card__arrow">Lihat Profil <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 2: Lokasi Perkuliahan -->
+          <a href="lokasi.html" class="card card--clickable fade-up delay-2" aria-label="Lokasi Perkuliahan">
+            <div class="card__icon">🏛️</div>
+            <h3 class="card__title">Lokasi Perkuliahan</h3>
+            <p class="card__body">Informasi mengenai tempat dan lingkungan perkuliahan PPG.</p>
+            <span class="card__arrow">Lihat Lokasi <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 3: Refleksi Mata Kuliah -->
+          <a href="refleksi.html" class="card card--clickable fade-up delay-3" aria-label="Refleksi Mata Kuliah">
+            <div class="card__icon">📖</div>
+            <h3 class="card__title">Refleksi Mata Kuliah</h3>
+            <p class="card__body">Refleksi pembelajaran Semester 1 dan Semester 2, total 14 mata kuliah.</p>
+            <span class="card__arrow">Lihat Refleksi <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 4: Model Guru -->
+          <a href="model-guru.html" class="card card--clickable fade-up delay-1" aria-label="Model Guru yang Dituju">
+            <div class="card__icon">🌟</div>
+            <h3 class="card__title">Model Guru yang Dituju</h3>
+            <p class="card__body">Gambaran guru yang ingin diwujudkan: prinsip, filosofi, dan harapan.</p>
+            <span class="card__arrow">Lihat Model Guru <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 5: Dokumentasi PPG -->
+          <a href="dokumentasi.html" class="card card--clickable fade-up delay-2" aria-label="Dokumentasi PPG">
+            <div class="card__icon">📷</div>
+            <h3 class="card__title">Dokumentasi PPG</h3>
+            <p class="card__body">Kumpulan dokumentasi kegiatan selama mengikuti Program Pendidikan Profesi Guru.</p>
+            <span class="card__arrow">Lihat Dokumentasi <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+
+          <!-- Card 6: Tentang Saya -->
+          <a href="profil.html#tentang-saya" class="card card--clickable fade-up delay-3" aria-label="Tentang Saya">
+            <div class="card__icon">✍️</div>
+            <h3 class="card__title">Tentang Saya</h3>
+            <p class="card__body">Latar belakang pendidikan, pengalaman, dan alasan mengikuti PPG.</p>
+            <span class="card__arrow">Tentang Saya <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         QUOTE SECTION
+    ============================================================ -->
+    <section class="quote-section" aria-label="Kutipan inspirasi">
+      <div class="quote-section__inner">
+        <!-- Ornamen mon Jepang -->
+        <div style="font-size:1.5rem; opacity:0.18; margin-bottom:var(--space-4); letter-spacing:0.6em;" aria-hidden="true">武 道 義</div>
+        <p class="quote-section__text fade-up" id="home-quote">
+          "Menjadi guru bukan hanya tentang mengajar, tetapi juga tentang terus belajar,
+          memahami, dan memberikan yang terbaik bagi peserta didik."
+        </p>
+        <p class="quote-section__attr fade-up delay-2" id="home-quote-attr">E-Portfolio Mahasiswa PPG</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top: var(--space-3);">
+          <span id="footer-prodi"></span>
+          <span id="footer-univ"></span>
+          <span id="footer-tahun"></span>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap: var(--space-3); align-items: flex-end;">
+        <nav aria-label="Tautan cepat footer" style="display:flex; flex-direction:column; gap: var(--space-2); align-items:flex-end;">
+          <a href="profil.html"      style="font-size: var(--text-sm); color: rgba(255,255,255,0.55); transition: color var(--transition-fast);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Profil Mahasiswa</a>
+          <a href="refleksi.html"    style="font-size: var(--text-sm); color: rgba(255,255,255,0.55); transition: color var(--transition-fast);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Refleksi Mata Kuliah</a>
+          <a href="dokumentasi.html" style="font-size: var(--text-sm); color: rgba(255,255,255,0.55); transition: color var(--transition-fast);" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.55)'">Dokumentasi PPG</a>
+        </nav>
+        <div class="footer__social" id="footer-social"></div>
+      </div>
+
+      <div class="footer__divider"></div>
+
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+
+  <!-- Inline init untuk halaman Home -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const p = DATA.profil;
+
+      // Navbar brand name
+      document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+      // Hero
+      document.getElementById('hero-nama').textContent      = p.namaLengkap  || '[ Nama Mahasiswa ]';
+      document.getElementById('hero-prodi').textContent     = p.bidangStudi  || '[ Bidang Studi ]';
+      document.getElementById('hero-univ').textContent      = p.universitas  || '[ Universitas / LPTK ]';
+      document.getElementById('hero-tahun').textContent     = p.tahunPPG     || '[ Tahun PPG ]';
+
+      // Hero foto
+      const wrap = document.getElementById('hero-photo-wrap');
+      if (p.fotoProfil && !p.fotoProfil.includes('[')) {
+        wrap.outerHTML = `<img src="${p.fotoProfil}" alt="Foto ${p.namaLengkap}" class="hero__photo">`;
+      }
+
+      // Quote
+      if (DATA.modelGuru && DATA.modelGuru.quote) {
+        document.getElementById('home-quote').textContent = DATA.modelGuru.quote;
+      }
+      document.getElementById('home-quote-attr').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+      // Footer
+      document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+      document.getElementById('footer-prodi').textContent     = p.bidangStudi || '';
+      document.getElementById('footer-univ').textContent      = p.universitas  || '';
+      document.getElementById('footer-tahun').textContent     = p.tahunPPG     || '';
+      document.getElementById('footer-copyright').textContent = '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+
+      // Footer social
+      const socialWrap = document.getElementById('footer-social');
+      if (p.email && !p.email.includes('[')) {
+        const a = document.createElement('a');
+        a.href    = 'https://mail.google.com/mail/?view=cm&to=' + p.email;
+        a.target  = '_blank';
+        a.rel     = 'noopener noreferrer';
+        a.innerHTML = '✉ Email';
+        socialWrap.appendChild(a);
+      }
+      if (p.instagram && !p.instagram.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.instagram;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = '⊙ Instagram';
+        socialWrap.appendChild(a);
+      }
+      if (p.linkedin && !p.linkedin.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.linkedin;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = '⊞ LinkedIn';
+        socialWrap.appendChild(a);
+      }
+    });
+  </script>
+
+</body>
+</html>

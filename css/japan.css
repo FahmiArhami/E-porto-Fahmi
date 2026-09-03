@@ -1,0 +1,1134 @@
+/* ============================================================
+   E-PORTFOLIO MAHASISWA PPG — JAPAN MASCULINE THEME
+   japan.css — Sumi-e · Samurai · Indigo · Bushido
+   
+   Konsep Visual:
+   ─────────────────────────────────────────────────────────────
+   Terinspirasi estetika Jepang maskulin klasik:
+   
+   • Sumi-e (墨絵) — lukisan tinta hitam
+   • Kachi-iro (勝色) — biru indigo "warna kemenangan" samurai
+   • Tetsu-iro (鉄色) — abu-abu besi
+   • Kincha (金茶) — emas tembaga (aksen)
+   • Washi (和紙) — kertas Jepang putih keabuan
+   
+   Palet:
+   • Kachi-iro    #1A2D5A  → primary (biru indigo gelap)
+   • Tetsu-iro    #3A3F47  → dark surface
+   • Kincha       #B87333  → accent (tembaga/emas)
+   • Sumi         #0D0D0F  → teks hitam tinta
+   • Washi        #F5F3EE  → background
+   • Akane        #8B2020  → aksen merah samurai (header/active)
+   ============================================================ */
+
+/* ============================================================
+   1. GOOGLE FONTS — Noto Serif JP + Zen Old Mincho
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Zen+Old+Mincho:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap');
+
+/* ============================================================
+   2. DESIGN TOKENS — Override
+   ============================================================ */
+:root {
+  /* ── Warna Utama ── */
+  --color-primary:        #1A2D5A;   /* Kachi-iro — biru indigo samurai */
+  --color-primary-light:  #2A4580;
+  --color-primary-dark:   #0F1C3A;
+
+  --color-accent:         #B87333;   /* Kincha — tembaga hangat */
+  --color-accent-light:   #D4944A;
+  --color-accent-dark:    #8A5520;
+
+  /* ── Background — Washi Keabuan ── */
+  --color-bg:             #F5F3EE;
+  --color-bg-alt:         #EDE9E0;
+  --color-white:          #FAFAF7;
+  --color-surface:        #FAFAF7;
+  --color-border:         #C8C0AE;
+  --color-border-light:   #DDD8CE;
+
+  /* ── Teks Sumi-e ── */
+  --color-text:           #0D0D0F;
+  --color-text-secondary: #2A2E38;
+  --color-text-muted:     #6A6B72;
+
+  /* ── Font ── */
+  --font-serif:  'Zen Old Mincho', 'Noto Serif JP', Georgia, serif;
+  --font-sans:   'Zen Kaku Gothic New', 'Noto Serif JP', sans-serif;
+
+  /* ── Border radius lebih tajam / angular ── */
+  --radius-sm:   1px;
+  --radius-md:   3px;
+  --radius-lg:   6px;
+  --radius-xl:   10px;
+
+  /* ── Token tambahan ── */
+  --akane:       #8B2020;   /* Merah samurai */
+  --gold-mon:    #C9A84C;   /* Emas kamon */
+  --tetsu:       #3A3F47;   /* Abu-abu besi */
+  --sumi-shadow: rgba(10, 15, 30, 0.15);
+  --kachi-glow:  rgba(26, 45, 90, 0.12);
+}
+
+/* ============================================================
+   3. BODY — Washi + Subtle Seigaiha (青海波) Pattern
+   ============================================================ */
+body {
+  background-color: var(--color-bg);
+  /* Seigaiha wave pattern — motif tradisional Jepang maskulin */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Ccircle cx='20' cy='20' r='18' fill='none' stroke='%23C8C0AE' stroke-width='0.4' opacity='0.35'/%3E%3Ccircle cx='20' cy='20' r='12' fill='none' stroke='%23C8C0AE' stroke-width='0.3' opacity='0.2'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+}
+
+/* ============================================================
+   4. NAVBAR — Samurai Dark Header
+   ============================================================ */
+.navbar {
+  background-color: #0D0F18;   /* Gelap hampir hitam — gaya armor samurai */
+  border-bottom: 2px solid var(--color-accent);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.navbar.scrolled {
+  box-shadow: 0 3px 24px rgba(0,0,0,0.5);
+  border-color: var(--gold-mon);
+}
+
+/* Brand — garis emas vertikal kiri seperti mon samurai */
+.navbar__brand {
+  position: relative;
+  padding-left: var(--space-5);
+}
+
+.navbar__brand::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 75%;
+  background: linear-gradient(to bottom, var(--gold-mon), var(--color-accent));
+  border-radius: 0;
+}
+
+.navbar__brand-top {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+}
+
+.navbar__brand-name {
+  font-family: var(--font-serif);
+  color: #E8E4DC;   /* Putih gading */
+  letter-spacing: 0.06em;
+  font-size: 1rem;
+}
+
+.navbar__link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #A0A8B8;   /* Abu-abu kebiruan */
+  transition: color 0.2s, background 0.2s;
+}
+
+.navbar__link::after {
+  background-color: var(--color-accent);
+  height: 2px;
+}
+
+.navbar__link:hover {
+  color: #E8E4DC;
+  background-color: rgba(255,255,255,0.05);
+}
+
+.navbar__link.active {
+  color: var(--gold-mon);
+}
+
+.navbar__toggle span {
+  background-color: #E8E4DC;
+}
+
+.navbar__drawer {
+  background-color: #12151E;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.navbar__drawer .navbar__link {
+  color: #A0A8B8;
+}
+
+.navbar__drawer .navbar__link:hover,
+.navbar__drawer .navbar__link.active {
+  color: var(--gold-mon);
+  background-color: rgba(200,160,76,0.08);
+}
+
+/* ============================================================
+   5. WAVE BAR — Gradient Indigo ke Emas
+   ============================================================ */
+@keyframes wave-pulse {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+.jp-wave-bar {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--color-primary-dark),
+    var(--color-primary),
+    var(--color-accent),
+    var(--gold-mon),
+    var(--color-accent),
+    var(--color-primary),
+    var(--color-primary-dark)
+  );
+  background-size: 300% 100%;
+  animation: wave-pulse 6s ease infinite;
+}
+
+/* ============================================================
+   6. SECTION LABELS & DIVIDER
+   ============================================================ */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+}
+
+.divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 0;
+}
+
+/* ============================================================
+   7. HERO — Sumi-e Aesthetic
+   ============================================================ */
+.hero {
+  background-color: var(--color-white);
+  position: relative;
+}
+
+/* Seigaiha wave di background kanan */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48%;
+  height: 100%;
+  background-color: var(--color-bg);
+  background-image:
+    /* Garis diagonal sumi-e */
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 28px,
+      rgba(26,45,90,0.04) 28px,
+      rgba(26,45,90,0.04) 30px
+    );
+  z-index: 0;
+}
+
+/* Garis sumi-e vertikal kanan hero */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 48%;
+  width: 2px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--color-primary) 20%,
+    var(--color-accent) 50%,
+    var(--color-primary) 80%,
+    transparent 100%
+  );
+  opacity: 0.3;
+  z-index: 1;
+}
+
+.hero__eyebrow {
+  color: var(--color-accent);
+  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+}
+
+.hero__eyebrow::before {
+  background-color: var(--color-accent);
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.06em;
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+.hero__title span {
+  color: var(--color-primary);
+  font-style: normal;
+  position: relative;
+}
+
+/* Garis bawah aksen emas di span */
+.hero__title span::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-accent), transparent);
+}
+
+.hero__meta {
+  border-left: 3px solid var(--color-primary);
+  background-color: var(--color-bg);
+  border-radius: 0;   /* Angular — gaya samurai */
+}
+
+/* Foto — frame sumi-e dengan shadow kanan-bawah offset */
+.hero__photo {
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-white);
+  box-shadow:
+    8px 8px 0 var(--color-primary-dark),
+    10px 10px 0 rgba(26,45,90,0.2);
+}
+
+.hero__photo-placeholder {
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--color-border);
+  box-shadow: 8px 8px 0 var(--color-border);
+}
+
+.hero__photo-wrap::before {
+  border-color: var(--color-accent);
+  opacity: 0.3;
+}
+
+.hero__photo-wrap::after {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  opacity: 0.18;
+}
+
+/* Ornamen pojok hero — ⚔ dengan glow kontras & fully visible */
+.hero__sakura-corner {
+  position: absolute;
+  top: calc(var(--navbar-height) + 28px);
+  right: 28px;
+  font-size: 3.5rem;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 3;
+  line-height: 1;
+  animation: float-gentle 6s ease-in-out infinite;
+  /* Glow lapis: emas + indigo + shadow gelap */
+  filter:
+    drop-shadow(0 0 10px rgba(212,137,26,0.95))
+    drop-shadow(0 0 24px rgba(42,79,214,0.60))
+    drop-shadow(0 4px 8px rgba(0,0,0,0.45));
+}
+
+/* ============================================================
+   8. BUTTONS — Samurai Bold Style
+   ============================================================ */
+.btn--primary {
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  background: var(--color-primary);
+  border: 1.5px solid var(--color-primary-dark);
+  border-radius: var(--radius-sm);
+  box-shadow: 4px 4px 0 var(--color-primary-dark);
+  transition: all 0.18s ease;
+  color: #E8E4DC;
+}
+
+.btn--primary:hover {
+  background: var(--color-primary-light);
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--color-primary-dark);
+}
+
+.btn--primary:active {
+  transform: translate(0, 0);
+  box-shadow: 1px 1px 0 var(--color-primary-dark);
+}
+
+.btn--outline {
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  font-size: 0.8rem;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  border-width: 1.5px;
+  box-shadow: 4px 4px 0 rgba(26,45,90,0.15);
+  transition: all 0.18s ease;
+}
+
+.btn--outline:hover {
+  background: var(--color-primary);
+  color: #E8E4DC;
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 rgba(26,45,90,0.2);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  border: 1.5px solid var(--color-accent-dark);
+  box-shadow: 4px 4px 0 var(--color-accent-dark);
+  color: white;
+  border-radius: var(--radius-sm);
+}
+
+.btn--accent:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--color-accent-dark);
+}
+
+/* ============================================================
+   9. CARDS — Tatami / Yoroi (armor plate) Style
+   ============================================================ */
+.card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+/* Garis kiri — seperti pelat besi/baju zirah */
+.card:hover {
+  border-left-color: var(--color-primary);
+  transform: translateX(3px) translateY(-3px);
+  box-shadow: -3px 6px 20px var(--sumi-shadow);
+}
+
+/* Hapus ::after origami — ganti dengan corner mark indigo */
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-primary));
+  transition: height 0.3s ease;
+  border-radius: 0;
+}
+
+.card:hover::after {
+  height: 100%;
+  opacity: 1;
+}
+
+.card__title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+}
+
+.card__body {
+  color: var(--color-text-secondary);
+}
+
+.card__arrow {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   10. PAGE HEADER — Dark Sumi-e Banner
+   ============================================================ */
+.page-header {
+  background: linear-gradient(160deg,
+    #0D0F18 0%,
+    var(--color-primary-dark) 40%,
+    #0F1C3A 70%,
+    #050810 100%
+  );
+  position: relative;
+}
+
+/* Kenzan (剣山) pattern — garis diagonal sumi-e */
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -60deg,
+      transparent,
+      transparent 40px,
+      rgba(200, 160, 76, 0.04) 40px,
+      rgba(200, 160, 76, 0.04) 42px
+    ),
+    repeating-linear-gradient(
+      30deg,
+      transparent,
+      transparent 60px,
+      rgba(26, 45, 90, 0.1) 60px,
+      rgba(26, 45, 90, 0.1) 62px
+    );
+  pointer-events: none;
+}
+
+/* Garis emas horizontal di bawah page-header */
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-accent) 20%,
+    var(--gold-mon) 50%,
+    var(--color-accent) 80%,
+    transparent 100%
+  );
+}
+
+.page-header__label {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+}
+
+.page-header__title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #E8E4DC;
+}
+
+.page-header__subtitle {
+  color: rgba(232, 228, 220, 0.65);
+}
+
+.page-header__breadcrumb {
+  color: rgba(255,255,255,0.35);
+}
+
+.page-header__breadcrumb a {
+  color: rgba(255,255,255,0.45);
+}
+
+.page-header__breadcrumb a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   11. QUOTE SECTION — Dark Sumi-e
+   ============================================================ */
+.quote-section {
+  background: linear-gradient(160deg,
+    #050810 0%,
+    #0D0F18 30%,
+    var(--color-primary-dark) 70%,
+    #050810 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bamboo grove lines — garis vertikal halus */
+.quote-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 58px,
+    rgba(200,160,76,0.04) 58px,
+    rgba(200,160,76,0.04) 60px
+  );
+  pointer-events: none;
+}
+
+.quote-section__text {
+  font-family: var(--font-serif);
+  letter-spacing: 0.06em;
+  line-height: 2;
+  color: #E8E4DC;
+}
+
+/* ============================================================
+   12. PROFIL SECTION
+   ============================================================ */
+.profil-photo {
+  border: 2px solid var(--color-white);
+  box-shadow:
+    8px 8px 0 var(--color-primary-dark),
+    10px 10px 0 rgba(26,45,90,0.15);
+}
+
+.profil-photo-placeholder {
+  border: 2px solid var(--color-border);
+  box-shadow: 8px 8px 0 var(--color-border);
+}
+
+.profil-photo-wrap::after {
+  border-color: var(--color-accent);
+  opacity: 0.35;
+}
+
+.asal-daerah-block {
+  background: linear-gradient(135deg, #0D0F18 0%, var(--color-primary-dark) 60%, #0F1C3A 100%);
+  border-left: 4px solid var(--gold-mon);
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   13. ACCORDION — Kamon (家紋) Style
+   ============================================================ */
+.accordion-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.accordion-item:hover {
+  border-left-color: rgba(26,45,90,0.4);
+  box-shadow: 2px 4px 12px var(--sumi-shadow);
+}
+
+.accordion-item.open {
+  border-left-color: var(--color-primary);
+  border-color: rgba(26,45,90,0.2);
+  box-shadow: 3px 6px 20px var(--kachi-glow);
+}
+
+.accordion-trigger__num {
+  background-color: var(--color-bg-alt);
+  color: var(--color-primary);
+  font-family: var(--font-serif);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+}
+
+.accordion-item.open .accordion-trigger__num {
+  background: var(--color-primary);
+  color: #E8E4DC;
+}
+
+.accordion-trigger__title {
+  font-family: var(--font-serif);
+  color: var(--color-primary-dark);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.accordion-trigger__icon {
+  color: var(--color-accent);
+}
+
+.accordion-field__label {
+  color: var(--color-accent);
+  letter-spacing: 0.18em;
+  font-family: var(--font-sans);
+}
+
+.semester-badge {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  letter-spacing: 0.12em;
+  font-family: var(--font-sans);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.semester-badge--2 {
+  background: linear-gradient(135deg, var(--tetsu) 0%, #22262E 100%);
+  border: 1px solid var(--color-accent);
+  color: var(--gold-mon);
+}
+
+.semester-title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.06em;
+  color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   14. PRINSIP CARDS — Bushido 7 Virtues Style
+   ============================================================ */
+.prinsip-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.prinsip-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.prinsip-card:hover {
+  border-top-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--sumi-shadow);
+}
+
+.prinsip-card:hover::before {
+  transform: scaleX(1);
+}
+
+.prinsip-card__judul {
+  font-family: var(--font-serif);
+  color: var(--color-primary-dark);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+/* ============================================================
+   15. FILOSOFI & HARAPAN BLOCK
+   ============================================================ */
+.filosofi-block {
+  border-left: 4px solid var(--color-primary);
+  background: var(--color-white);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.filosofi-block__title {
+  font-family: var(--font-serif);
+  color: var(--color-primary-dark);
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.harapan-block {
+  background: linear-gradient(160deg,
+    #050810 0%,
+    #0D0F18 40%,
+    var(--color-primary-dark) 100%
+  );
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bamboo vertical lines */
+.harapan-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 48px,
+    rgba(200,160,76,0.05) 48px,
+    rgba(200,160,76,0.05) 50px
+  );
+  pointer-events: none;
+}
+
+/* Garis emas bawah */
+.harapan-block::after {
+  content: '⚔';
+  position: absolute;
+  bottom: var(--space-5);
+  right: var(--space-8);
+  font-size: 4rem;
+  opacity: 0.05;
+  line-height: 1;
+}
+
+.harapan-block__title {
+  font-family: var(--font-serif);
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+/* ============================================================
+   16. CIRI KHAS CARD
+   ============================================================ */
+.ciri-khas-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+}
+
+.ciri-khas-card:hover {
+  border-top-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--sumi-shadow);
+}
+
+.ciri-khas-card__kategori {
+  color: var(--color-accent);
+  letter-spacing: 0.15em;
+  font-family: var(--font-sans);
+}
+
+/* ============================================================
+   17. GALLERY
+   ============================================================ */
+.gallery-item {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  transition: all 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--sumi-shadow);
+  border-color: var(--color-primary);
+}
+
+.gallery-item__category {
+  background: linear-gradient(135deg, rgba(13,15,24,0.9), rgba(26,45,90,0.85));
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  border-radius: var(--radius-sm);
+}
+
+.filter-btn {
+  font-family: var(--font-sans);
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  border-color: var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  transition: all 0.18s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary-dark);
+  color: #E8E4DC;
+  box-shadow: 3px 3px 0 var(--color-primary-dark);
+}
+
+/* ============================================================
+   18. FOOTER — Dark Sumi-e
+   ============================================================ */
+.footer {
+  background: linear-gradient(160deg,
+    #050810 0%,
+    #0A0D18 40%,
+    var(--color-primary-dark) 80%,
+    #050810 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mon diagonal pattern di footer */
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 30px,
+      rgba(200,160,76,0.03) 30px,
+      rgba(200,160,76,0.03) 32px
+    );
+  pointer-events: none;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--color-accent) 30%,
+    var(--gold-mon) 50%,
+    var(--color-accent) 70%,
+    transparent
+  );
+}
+
+.footer__brand-label {
+  color: var(--color-accent);
+  letter-spacing: 0.2em;
+  font-family: var(--font-sans);
+}
+
+.footer__brand-name {
+  font-family: var(--font-serif);
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* ============================================================
+   19. LPTK INFO ITEMS
+   ============================================================ */
+.lptk-info-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-left: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.lptk-info-item__label {
+  color: var(--color-accent);
+  letter-spacing: 0.12em;
+  font-family: var(--font-sans);
+}
+
+/* ============================================================
+   20. INFO BLOCKS
+   ============================================================ */
+.info-block {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+.info-block__title {
+  font-family: var(--font-serif);
+  color: var(--color-primary-dark);
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+/* ============================================================
+   21. BIO TABLE
+   ============================================================ */
+.bio-table td:first-child {
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-family: var(--font-sans);
+  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+}
+
+.bio-table tr {
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+/* ============================================================
+   22. MAPS CONTAINER
+   ============================================================ */
+.maps-container {
+  border: 1px solid var(--color-border);
+  border-top: 3px solid var(--color-primary);
+  border-radius: var(--radius-md);
+}
+
+/* ============================================================
+   23. GALERI MINI
+   ============================================================ */
+.galeri-mini__item {
+  border-radius: var(--radius-md);
+  border: 2px solid var(--color-border-light);
+  transition: all 0.2s ease;
+}
+
+.galeri-mini__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px var(--sumi-shadow);
+  border-color: var(--color-primary);
+}
+
+/* ============================================================
+   24. ANIMASI — Partikel Sumi-e (Tinta Jatuh)
+   ============================================================ */
+
+/* ============================================================
+   24. ANIMASI — Ornamen & Efek
+   ============================================================ */
+
+/* Float ornamen pojok hero */
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(-3deg); }
+  50%       { transform: translateY(-14px) rotate(5deg); }
+}
+
+/* Pulse kilat pedang */
+@keyframes sword-shimmer {
+  0%   { left: -60%; }
+  100% { left: 130%; }
+}
+
+/* ============================================================
+   25. CONTAINER SAKURA
+   ============================================================ */
+/* Animasi petal di-inject oleh sakura.js — tidak perlu CSS di sini */
+#sakura-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* ============================================================
+   26. SHIMMER EFEK PADA DIVIDER & TOMBOL AKTIF
+   ============================================================ */
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.12),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: sword-shimmer 3.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.btn--primary {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ============================================================
+   27. ORNAMEN JEPANG — JP-DIVIDER & TORII LINE
+   ============================================================ */
+.jp-divider::before,
+.jp-divider::after {
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+}
+
+.jp-divider__mon {
+  color: var(--color-accent);
+}
+
+/* Garis torii — pakai ikon pedang/mon alih-alih ⛩ */
+.jp-torii-line::after {
+  content: '⚔';
+  background-color: var(--color-bg);
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   28. SCROLL ANIMATIONS
+   ============================================================ */
+.fade-up {
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================================
+   29. LIGHTBOX
+   ============================================================ */
+.lightbox {
+  background-color: rgba(5, 8, 16, 0.96);
+}
+
+.lightbox__nav,
+.lightbox__close {
+  background-color: rgba(26,45,90,0.5);
+  color: #E8E4DC;
+}
+
+.lightbox__nav:hover,
+.lightbox__close:hover {
+  background-color: rgba(26,45,90,0.8);
+}
+
+.lightbox__category {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   30. RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .hero::after { display: none; }
+
+  .hero__sakura-corner {
+    font-size: 2.8rem;
+    right: 14px;
+    top: calc(var(--navbar-height) + 14px);
+    filter:
+      drop-shadow(0 0 8px rgba(212,137,26,0.95))
+      drop-shadow(0 0 18px rgba(42,79,214,0.55))
+      drop-shadow(0 3px 6px rgba(0,0,0,0.4));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__sakura-corner {
+    font-size: 2.2rem;
+    right: 10px;
+  }
+}
+
+/* ============================================================
+   NAVBAR — LEBAR & SPACING (8 menu)
+   ============================================================ */
+
+/* Perlebar container navbar agar 8 menu tidak mepet */
+.navbar__inner {
+  max-width: 1320px;
+  padding-inline: 1.25rem;
+}
+
+/* Kurangi gap antar link & padding tiap link */
+.navbar__nav {
+  gap: 0;
+}
+
+.navbar__link {
+  font-size: 0.72rem;
+  padding: var(--space-2) 0.55rem;
+  letter-spacing: 0.04em;
+}
+
+/* Kecilkan brand sedikit agar tidak makan tempat */
+.navbar__brand-name {
+  font-size: 0.9rem;
+}
+
+.navbar__brand-top {
+  font-size: 0.58rem;
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Refleksi Mata Kuliah PPG — Semester 1 dan Semester 2" />
+  <title>Refleksi Mata Kuliah — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── REFLEKSI BODY INNER ─────────────────────────────────── */
+    .refl-body-inner {
+      padding-left: var(--space-6) !important;
+    }
+
+    /* ── HEADER INFO (nama + dosen) ─────────────────────────── */
+    .refl-header-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+      background: var(--color-bg);
+      border: 1px solid var(--color-border-light);
+      border-left: 4px solid var(--color-primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      padding: var(--space-4) var(--space-5);
+      margin-bottom: var(--space-6);
+    }
+    .refl-header-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-1);
+      font-family: var(--font-sans);
+    }
+    .refl-header-nama {
+      font-family: var(--font-serif);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      line-height: 1.3;
+    }
+    .refl-header-dosen {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-secondary);
+    }
+
+    /* ── NAMA DOSEN di trigger (ringkas) ────────────────────── */
+    .accordion-trigger__dosen-inline {
+      font-size: 0.72rem;
+      color: var(--color-text-muted);
+      font-family: var(--font-sans);
+      margin-left: auto;
+      margin-right: var(--space-3);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 200px;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTION BLOCK (pembungkus tiap kelompok) ───────────── */
+    .refl-section-block {
+      margin-bottom: var(--space-6);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .refl-section-block--last { margin-bottom: 0; }
+
+    .refl-section-title {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      background: var(--color-bg-alt);
+      border-bottom: 1px solid var(--color-border-light);
+      padding: var(--space-3) var(--space-5);
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-primary-dark);
+    }
+    .refl-section-icon {
+      color: var(--color-accent);
+      font-size: 0.85rem;
+    }
+    .refl-section-sub {
+      font-weight: 400;
+      color: var(--color-text-muted);
+      letter-spacing: 0.06em;
+      font-size: 0.68rem;
+      margin-left: var(--space-1);
+    }
+
+    /* ── PLACEHOLDER teks ───────────────────────────────────── */
+    .refl-placeholder {
+      color: var(--color-text-light) !important;
+      font-style: italic;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       BLOK 1 — REFLEKSI 4C
+    ══════════════════════════════════════════════════════════ */
+    .refl-4c-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .refl-4c-item {
+      display: flex;
+      gap: var(--space-3);
+      padding: var(--space-5);
+      border-right: 1px solid var(--color-border-light);
+      border-bottom: 1px solid var(--color-border-light);
+      transition: background 0.2s;
+    }
+    .refl-4c-item:nth-child(2n) { border-right: none; }
+    .refl-4c-item:nth-child(3),
+    .refl-4c-item:nth-child(4)  { border-bottom: none; }
+    .refl-4c-item:hover         { background: rgba(26,45,90,0.025); }
+
+    .refl-4c-badge {
+      flex-shrink: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.05em;
+      margin-top: 2px;
+    }
+    .refl-4c-content { flex: 1; min-width: 0; }
+    .refl-4c-label {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-2);
+    }
+    .refl-4c-text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.75;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    /* ══════════════════════════════════════════════════════════
+       BLOK 2 — ARTEFAK (1 kolom)
+    ══════════════════════════════════════════════════════════ */
+    /* ══════════════════════════════════════════════════════════
+       BLOK 3 — KAITAN PRAKTIS (1 kolom)
+    ══════════════════════════════════════════════════════════ */
+    .refl-single-wrap {
+      padding: var(--space-5);
+    }
+    .refl-single-text {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      margin: 0;
+      white-space: pre-line;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .refl-header-info    { grid-template-columns: 1fr; }
+      .refl-4c-grid        { grid-template-columns: 1fr; }
+      .refl-4c-item        { border-right: none !important; }
+      .refl-4c-item:nth-child(3),
+      .refl-4c-item:nth-child(4) { border-bottom: 1px solid var(--color-border-light); }
+      .refl-4c-item:last-child   { border-bottom: none; }
+      .accordion-trigger__dosen-inline { display: none; }
+      .refl-body-inner { padding-left: var(--space-4) !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"     class="navbar__link active">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"          class="navbar__link">UTS</a>
+        <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+        <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Wave bar dekorasi Jepang -->
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"        class="navbar__link">Home</a>
+    <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"     class="navbar__link active">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"          class="navbar__link">UTS</a>
+    <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+    <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Refleksi Mata Kuliah</span>
+        </nav>
+        <p class="page-header__label">Pembelajaran & Refleksi</p>
+        <h1 class="page-header__title">Refleksi Mata Kuliah</h1>
+        <p class="page-header__subtitle">
+          Refleksi pembelajaran dari 14 mata kuliah selama dua semester PPG.
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         RINGKASAN TOTAL MK
+    ============================================================ -->
+    <section class="section section--white" aria-label="Ringkasan mata kuliah">
+      <div class="container">
+        <div style="display:flex; gap: var(--space-6); justify-content:center; flex-wrap:wrap;" class="fade-up">
+          <div style="text-align:center; padding: var(--space-6) var(--space-10); background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); border-radius: var(--radius-xl); color:white; min-width: 180px;">
+            <div style="font-family: var(--font-serif); font-size: var(--text-4xl); font-weight: var(--weight-semi); line-height:1;">14</div>
+            <div style="font-size: var(--text-sm); color: rgba(255,255,255,0.7); margin-top: var(--space-2); letter-spacing:0.05em;">Total Mata Kuliah</div>
+          </div>
+          <div style="text-align:center; padding: var(--space-6) var(--space-10); background: var(--color-white); border: 2px solid var(--color-primary); border-radius: var(--radius-xl); min-width: 180px;">
+            <div style="font-family: var(--font-serif); font-size: var(--text-4xl); font-weight: var(--weight-semi); color: var(--color-primary); line-height:1;">7</div>
+            <div style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2); letter-spacing:0.05em;">Semester 1</div>
+          </div>
+          <div style="text-align:center; padding: var(--space-6) var(--space-10); background: var(--color-white); border: 2px solid var(--color-accent); border-radius: var(--radius-xl); min-width: 180px;">
+            <div style="font-family: var(--font-serif); font-size: var(--text-4xl); font-weight: var(--weight-semi); color: var(--color-accent); line-height:1;">7</div>
+            <div style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2); letter-spacing:0.05em;">Semester 2</div>
+          </div>
+        </div>
+
+        <!-- Jump nav -->
+        <div style="display:flex; gap:var(--space-3); justify-content:center; margin-top: var(--space-8); flex-wrap:wrap;" class="fade-up delay-2">
+          <a href="#semester-1" class="btn btn--primary btn--sm">↓ Semester 1</a>
+          <a href="#semester-2" class="btn btn--outline btn--sm">↓ Semester 2</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEMESTER 1 — 7 MATA KULIAH
+    ============================================================ -->
+    <section class="section" id="semester-1" aria-labelledby="smt1-title">
+      <div class="container">
+
+        <div class="semester-header fade-up">
+          <span class="semester-badge">一 · Semester 1</span>
+          <h2 class="semester-title" id="smt1-title">Refleksi Mata Kuliah Semester 1</h2>
+          <span class="mk-count">7 Mata Kuliah</span>
+        </div>
+
+        <div class="accordion" id="accordion-smt1" role="list">
+          <!-- Diisi via JS dari DATA.semester1 -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SEMESTER 2 — 7 MATA KULIAH
+    ============================================================ -->
+    <section class="section section--alt" id="semester-2" aria-labelledby="smt2-title">
+      <div class="container">
+
+        <div class="semester-header fade-up">
+          <span class="semester-badge semester-badge--2">二 · Semester 2</span>
+          <h2 class="semester-title" id="smt2-title">Refleksi Mata Kuliah Semester 2</h2>
+          <span class="mk-count">7 Mata Kuliah</span>
+        </div>
+
+        <div class="accordion" id="accordion-smt2" role="list">
+          <!-- Diisi via JS dari DATA.semester2 -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top: var(--space-3);">
+          <span id="footer-prodi"></span>
+          <span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const p = DATA.profil;
+
+      document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+      // ── Helper: aman ambil nilai, return fallback jika placeholder ──
+      function val(str, fallback) {
+        return (str && !str.startsWith('[')) ? str : (fallback || str || '');
+      }
+
+      // ── Helper: buat satu baris field 4C ─────────────────────
+      function field4C(huruf, warna, label, isi) {
+        const isEmpty = !isi || isi.startsWith('[');
+        return `
+          <div class="refl-4c-item">
+            <div class="refl-4c-badge" style="background:${warna};">${huruf}</div>
+            <div class="refl-4c-content">
+              <div class="refl-4c-label">${label}</div>
+              <p class="refl-4c-text ${isEmpty ? 'refl-placeholder' : ''}">${isi || ''}</p>
+            </div>
+          </div>`;
+      }
+
+      // ── Fungsi bangun accordion ────────────────────────────────
+      function buildAccordion(containerId, mataKuliahArr, semesterNum) {
+        const container = document.getElementById(containerId);
+        if (!container || !mataKuliahArr) return;
+
+        mataKuliahArr.forEach(function(mk, i) {
+          const idx    = i + 1;
+          const itemId = 'acc-' + semesterNum + '-' + idx;
+
+          const namaDisplay = val(mk.nama, 'Mata Kuliah ' + idx + ' (Semester ' + semesterNum + ')');
+          const dosenDisplay = val(mk.dosen, '[ Nama Dosen Pengampu ]');
+
+          // ── Blok 4C ─────────────────────────────────────
+          const c4 = mk.c4 || {};
+          const blok4C = `
+            <div class="refl-section-block">
+              <div class="refl-section-title">
+                <span class="refl-section-icon">◈</span>
+                Refleksi 4C
+                <span class="refl-section-sub">Connection · Challenge · Concept · Change</span>
+              </div>
+              <div class="refl-4c-grid">
+                ${field4C('C1', '#1A2D5A', 'Connection · Keterkaitan',
+                    c4.connection || '[Isi Connection]')}
+                ${field4C('C2', '#C0392B', 'Challenge · Tantangan',
+                    c4.challenge  || '[Isi Challenge]')}
+                ${field4C('C3', '#B87333', 'Concept · Konsep Utama',
+                    c4.concept    || '[Isi Concept]')}
+                ${field4C('C4', '#2E7D52', 'Change · Perubahan',
+                    c4.change     || '[Isi Change]')}
+              </div>
+            </div>`;
+
+          // ── Blok Artefak ─────────────────────────────────
+          const artTeks = (mk.artefak && typeof mk.artefak === 'string') ? mk.artefak : '[Isi analisis artefak]';
+          const artIsEmpty = artTeks.startsWith('[');
+          const blokArtefak = `
+            <div class="refl-section-block">
+              <div class="refl-section-title">
+                <span class="refl-section-icon">◆</span>
+                Analisis Artefak Pembelajaran
+              </div>
+              <div class="refl-single-wrap">
+                <p class="refl-single-text ${artIsEmpty ? 'refl-placeholder' : ''}">${artTeks}</p>
+              </div>
+            </div>`;
+
+          // ── Blok Kaitan Praktis ───────────────────────────
+          const kaiTeks = (mk.kaitan && typeof mk.kaitan === 'string') ? mk.kaitan : '[Isi kaitan praktis]';
+          const kaiIsEmpty = kaiTeks.startsWith('[');
+          const blokKaitan = `
+            <div class="refl-section-block refl-section-block--last">
+              <div class="refl-section-title">
+                <span class="refl-section-icon">▶</span>
+                Kaitan Praktis
+              </div>
+              <div class="refl-single-wrap">
+                <p class="refl-single-text ${kaiIsEmpty ? 'refl-placeholder' : ''}">${kaiTeks}</p>
+              </div>
+            </div>`;
+
+          // ── Rakitan accordion item ─────────────────────────
+          const item = document.createElement('div');
+          item.className = 'accordion-item';
+          item.setAttribute('role', 'listitem');
+
+          item.innerHTML = `
+            <button
+              class="accordion-trigger"
+              aria-expanded="false"
+              aria-controls="${itemId}-body"
+              id="${itemId}-btn"
+              type="button"
+            >
+              <span class="accordion-trigger__left">
+                <span class="accordion-trigger__num" aria-hidden="true">${idx}</span>
+                <span class="accordion-trigger__title">${namaDisplay}</span>
+              </span>
+              <span class="accordion-trigger__dosen-inline">${dosenDisplay}</span>
+              <svg class="accordion-trigger__icon" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+
+            <div
+              class="accordion-body"
+              id="${itemId}-body"
+              role="region"
+              aria-labelledby="${itemId}-btn"
+            >
+              <div class="accordion-body__inner refl-body-inner">
+
+                <!-- Info atas: nama + dosen -->
+                <div class="refl-header-info">
+                  <div>
+                    <div class="refl-header-label">Mata Kuliah</div>
+                    <div class="refl-header-nama">${namaDisplay}</div>
+                  </div>
+                  <div>
+                    <div class="refl-header-label">Dosen / Pengampu</div>
+                    <div class="refl-header-dosen">${dosenDisplay}</div>
+                  </div>
+                </div>
+
+                ${blok4C}
+                ${blokArtefak}
+                ${blokKaitan}
+
+              </div>
+            </div>
+          `;
+
+          container.appendChild(item);
+        });
+      }
+
+      buildAccordion('accordion-smt1', DATA.semester1, 1);
+      buildAccordion('accordion-smt2', DATA.semester2, 2);
+
+      // ── Footer ────────────────────────────────────────────────
+      document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+      document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+      document.getElementById('footer-univ').textContent      = p.universitas  || '';
+      document.getElementById('footer-copyright').textContent =
+        '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+
+      const social = document.getElementById('footer-social');
+      if (p.email && !p.email.includes('[')) {
+        const a = document.createElement('a');
+        a.href = 'https://mail.google.com/mail/?view=cm&to=' + p.email; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.innerHTML = '✉ Email'; social.appendChild(a);
+      }
+      if (p.instagram && !p.instagram.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.instagram; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = '⊙ Instagram'; social.appendChild(a);
+      }
+      if (p.linkedin && !p.linkedin.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.linkedin; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = '⊞ LinkedIn'; social.appendChild(a);
+      }
+    });
+  </script>
+
+</body>
+</html>

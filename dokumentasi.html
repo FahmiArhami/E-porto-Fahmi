@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dokumentasi Kegiatan PPG — Galeri Foto Selama Program Pendidikan Profesi Guru" />
+  <title>Dokumentasi PPG — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"        class="navbar__link">Home</a>
+        <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"          class="navbar__link">UTS</a>
+        <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+        <a href="dokumentasi.html"  class="navbar__link active">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Wave bar dekorasi Jepang -->
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"        class="navbar__link">Home</a>
+    <a href="profil.html"       class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"       class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"     class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"          class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"          class="navbar__link">UTS</a>
+    <a href="model-guru.html"   class="navbar__link">Model Guru</a>
+    <a href="dokumentasi.html"  class="navbar__link active">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Dokumentasi PPG</span>
+        </nav>
+        <p class="page-header__label">Galeri Kegiatan</p>
+        <h1 class="page-header__title">Dokumentasi Selama PPG</h1>
+        <p class="page-header__subtitle">
+          Kumpulan momen dan kegiatan selama mengikuti Program Pendidikan Profesi Guru.
+        </p>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         GALERI DOKUMENTASI
+    ============================================================ -->
+    <section class="section section--white" aria-labelledby="galeri-title">
+      <div class="container">
+
+        <div class="section-header fade-up" style="margin-bottom: var(--space-8);">
+          <span class="section-label">Foto &amp; Dokumentasi · 記録</span>
+          <h2 class="section-title" id="galeri-title">Galeri Dokumentasi</h2>
+          <div class="divider"></div>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid fade-up delay-1" id="gallery-grid" role="list">
+          <!-- Diisi via JS dari DATA.dokumentasi -->
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Lihat foto" aria-hidden="true">
+    <button class="lightbox__prev" id="lb-prev" aria-label="Foto sebelumnya" type="button">‹</button>
+    <button class="lightbox__next" id="lb-next" aria-label="Foto berikutnya" type="button">›</button>
+    <button class="lightbox__close" id="lb-close" aria-label="Tutup lightbox" type="button">✕</button>
+
+    <div class="lightbox__img-only" id="lb-img-container">
+      <!-- img dimuat via JS -->
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top: var(--space-3);">
+          <span id="footer-prodi"></span>
+          <span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size: var(--text-xs); color: rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const p    = DATA.profil;
+      const docs = DATA.dokumentasi;
+
+      document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+      // ── Bangun gallery grid ────────────────────────────────────
+      const grid = document.getElementById('gallery-grid');
+      if (grid && docs) {
+        docs.forEach((item, i) => {
+          const div = document.createElement('div');
+          div.className  = 'gallery-item';
+          div.dataset.category = item.kategori;
+          div.dataset.index    = i;
+          div.setAttribute('role', 'listitem');
+          div.setAttribute('tabindex', '0');
+          div.setAttribute('aria-label', item.judul || 'Foto dokumentasi');
+
+          const isPlaceholder = !item.foto || item.foto.includes('[');
+          if (isPlaceholder) {
+            div.innerHTML = `
+              <div class="gallery-placeholder">
+                <span style="font-size:2.5rem; opacity:.35;">📷</span>
+                <span>${item.judul || '[ Judul Kegiatan ]'}</span>
+              </div>
+            `;
+          } else {
+            div.innerHTML = `
+              <img src="${item.foto}" alt="${item.judul || 'Dokumentasi PPG'}" loading="lazy" />
+            `;
+          }
+
+          grid.appendChild(div);
+        });
+      }
+
+      // Inisialisasi gallery & lightbox dilakukan di main.js
+
+      // ── Footer ────────────────────────────────────────────────
+      document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+      document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+      document.getElementById('footer-univ').textContent      = p.universitas  || '';
+      document.getElementById('footer-copyright').textContent =
+        '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+
+      const social = document.getElementById('footer-social');
+      if (p.email && !p.email.includes('[')) {
+        const a = document.createElement('a');
+        a.href = 'https://mail.google.com/mail/?view=cm&to=' + p.email; a.target = '_blank'; a.rel = 'noopener noreferrer'; a.innerHTML = '✉ Email'; social.appendChild(a);
+      }
+      if (p.instagram && !p.instagram.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.instagram; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = '⊙ Instagram'; social.appendChild(a);
+      }
+      if (p.linkedin && !p.linkedin.includes('[')) {
+        const a = document.createElement('a');
+        a.href = p.linkedin; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = '⊞ LinkedIn'; social.appendChild(a);
+      }
+    });
+  </script>
+
+</body>
+</html>
