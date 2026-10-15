@@ -1107,28 +1107,28 @@ body {
    NAVBAR — LEBAR & SPACING (8 menu)
    ============================================================ */
 
-/* Perlebar container navbar agar 8 menu tidak mepet */
+/* ── NAVBAR — 10 menu, seragam & tidak terpotong ── */
 .navbar__inner {
-  max-width: 1320px;
-  padding-inline: 1.25rem;
+  max-width: 1440px;
+  padding-inline: 1rem;
 }
 
-/* Kurangi gap antar link & padding tiap link */
 .navbar__nav {
   gap: 0;
 }
 
 .navbar__link {
-  font-size: 0.72rem;
-  padding: var(--space-2) 0.55rem;
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  padding: var(--space-2) 0.45rem;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
 }
 
-/* Kecilkan brand sedikit agar tidak makan tempat */
 .navbar__brand-name {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .navbar__brand-top {
-  font-size: 0.58rem;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
 }

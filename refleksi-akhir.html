@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Refleksi Akhir PPG — LK 3 Refleksi Pengalaman Belajar Selama Program PPG" />
+  <title>Refleksi Akhir PPG — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* Reuse lk3 layout */
+    .lk3-layout{display:grid;grid-template-columns:220px 1fr;gap:var(--space-10);align-items:start;max-width:var(--container-max);margin-inline:auto;padding-inline:var(--container-pad);padding-block:var(--space-12)}
+    .lk3-sidenav{position:sticky;top:calc(var(--navbar-height) + 16px)}
+    .lk3-sidenav__title{font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-4);padding-bottom:var(--space-3);border-bottom:1px solid var(--color-border)}
+    .lk3-sidenav__list{display:flex;flex-direction:column;gap:var(--space-1)}
+    .lk3-sidenav__link{display:flex;align-items:center;gap:var(--space-3);padding:var(--space-2) var(--space-3);border-radius:var(--radius-md);font-family:var(--font-sans);font-size:var(--text-sm);color:var(--color-text-secondary);text-decoration:none;transition:all .18s ease;border-left:3px solid transparent}
+    .lk3-sidenav__link:hover,.lk3-sidenav__link.active{background-color:var(--color-bg-alt);color:var(--color-primary);border-left-color:var(--color-primary)}
+    .lk3-sidenav__link.active{font-weight:600}
+    .lk3-sidenav__num{flex-shrink:0;width:22px;height:22px;border-radius:var(--radius-sm);background:var(--color-bg);border:1px solid var(--color-border);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:var(--color-accent)}
+    .lk3-content{display:flex;flex-direction:column;gap:var(--space-10)}
+    .lk3-section{scroll-margin-top:calc(var(--navbar-height) + 24px)}
+    .lk3-section__header{display:flex;align-items:flex-start;gap:var(--space-4);margin-bottom:var(--space-6);padding-bottom:var(--space-4);border-bottom:2px solid var(--color-border-light)}
+    .lk3-section__badge{flex-shrink:0;width:40px;height:40px;border-radius:var(--radius-md);background:var(--color-primary);color:#E8E4DC;display:flex;align-items:center;justify-content:center;font-family:var(--font-serif);font-size:1rem;font-weight:700;margin-top:2px}
+    .lk3-section__titles{flex:1}
+    .lk3-section__label{font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--color-accent);margin-bottom:var(--space-1)}
+    .lk3-section__title{font-family:var(--font-serif);font-size:var(--text-xl);font-weight:700;color:var(--color-primary-dark);line-height:1.3}
+    .lk3-desc{background:var(--color-bg);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-4) var(--space-5);font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.8;margin-bottom:var(--space-5);text-align:justify;text-justify:inter-word}
+    .lk3-analisis{background:var(--color-white);border:1px solid var(--color-border-light);border-top:3px solid var(--color-primary);border-radius:var(--radius-md);overflow:hidden;margin-bottom:var(--space-5)}
+    .lk3-analisis__header{display:flex;align-items:center;gap:var(--space-2);padding:var(--space-3) var(--space-5);background:var(--color-bg-alt);border-bottom:1px solid var(--color-border-light);font-family:var(--font-sans);font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--color-primary-dark)}
+    .lk3-analisis__icon{color:var(--color-accent)}
+    .lk3-analisis__body{padding:var(--space-5) var(--space-6);font-size:var(--text-sm);color:var(--color-text-secondary);line-height:1.8;white-space:pre-line;text-align:justify;text-justify:inter-word}
+    .lk3-analisis__body.placeholder{color:var(--color-text-light);font-style:italic}
+
+    /* ── 3 KARTU RENCANA TINDAK LANJUT ── */
+    .rtl-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-2);
+    }
+
+    .rtl-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .rtl-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .rtl-card__top {
+      background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+      padding: var(--space-5) var(--space-5) var(--space-4);
+      position: relative;
+      min-height: 110px;
+    }
+
+    .rtl-card__judul {
+      font-family: var(--font-serif);
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: #E8E4DC;
+      line-height: 1.35;
+      min-height: 2.7em;   /* ruang untuk 2 baris agar semua kartu sama */
+    }
+
+    .rtl-card__nomor {
+      font-family: var(--font-serif);
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-4);
+      user-select: none;
+    }
+
+    .rtl-card__judul-label {
+      font-family: var(--font-sans);
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--color-accent-light);
+      margin-bottom: var(--space-2);
+    }
+
+    .rtl-card__judul.placeholder {
+      color: rgba(232,228,220,.45);
+      font-style: italic;
+    }
+
+    .rtl-card__body {
+      padding: var(--space-5);
+    }
+
+    .rtl-card__narasi-label {
+      font-family: var(--font-sans);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: var(--space-3);
+    }
+
+    .rtl-card__narasi {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      line-height: 1.8;
+      text-align: justify;
+      text-justify: inter-word;
+      white-space: pre-line;
+    }
+
+    .rtl-card__narasi.placeholder {
+      color: var(--color-text-light);
+      font-style: italic;
+    }
+
+    @media(max-width:1024px){
+      .lk3-layout{grid-template-columns:1fr}
+      .lk3-sidenav{position:static}
+      .lk3-sidenav__list{flex-direction:row;flex-wrap:wrap;gap:var(--space-2)}
+      .lk3-sidenav__link{border-left:none;border-bottom:2px solid transparent;border-radius:var(--radius-sm)}
+      .lk3-sidenav__link:hover,.lk3-sidenav__link.active{border-left:none;border-bottom-color:var(--color-primary)}
+      .rtl-grid{grid-template-columns:1fr}
+    }
+
+    @media(max-width:768px){
+      .rtl-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"          class="navbar__link">Home</a>
+        <a href="profil.html"         class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"         class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"       class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"            class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"            class="navbar__link">UTS</a>
+        <a href="uas.html"            class="navbar__link">UAS</a>
+        <a href="model-guru.html"     class="navbar__link">Model Guru</a>
+        <a href="refleksi-akhir.html" class="navbar__link active">Refleksi Akhir PPG</a>
+        <a href="dokumentasi.html"    class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"          class="navbar__link">Home</a>
+    <a href="profil.html"         class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"         class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"       class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"            class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"            class="navbar__link">UTS</a>
+    <a href="uas.html"            class="navbar__link">UAS</a>
+    <a href="model-guru.html"     class="navbar__link">Model Guru</a>
+    <a href="refleksi-akhir.html" class="navbar__link active">Refleksi Akhir PPG</a>
+    <a href="dokumentasi.html"    class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Refleksi Akhir PPG</span>
+        </nav>
+        <p class="page-header__label">LK 3 · Refleksi Pengalaman Belajar</p>
+        <h1 class="page-header__title">Refleksi Akhir PPG</h1>
+        <p class="page-header__subtitle">
+          Refleksi mendalam atas pengalaman belajar selama mengikuti seluruh
+          rangkaian Program Pendidikan Profesi Guru.
+        </p>
+        <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap;">
+          <a href="index.html" class="btn btn--outline btn--sm" style="color:#E8E4DC;border-color:rgba(232,228,220,0.4);">← Beranda</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="lk3-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="lk3-sidenav fade-up" aria-label="Sub-navigasi Refleksi Akhir PPG">
+        <div class="lk3-sidenav__title">Komponen Refleksi</div>
+        <ul class="lk3-sidenav__list" role="list">
+          <li><a href="#ra-pandangan" class="lk3-sidenav__link active">
+            <span class="lk3-sidenav__num">1</span>Pandangan Pendidikan
+          </a></li>
+          <li><a href="#ra-upaya" class="lk3-sidenav__link">
+            <span class="lk3-sidenav__num">2</span>Upaya Guru Profesional
+          </a></li>
+          <li><a href="#ra-rtl" class="lk3-sidenav__link">
+            <span class="lk3-sidenav__num">3</span>Rencana Tindak Lanjut
+          </a></li>
+        </ul>
+      </aside>
+
+      <!-- KONTEN -->
+      <div class="lk3-content">
+
+        <!-- ── 1. PANDANGAN TENTANG PENDIDIKAN ── -->
+        <section class="lk3-section fade-up delay-1" id="ra-pandangan" aria-labelledby="title-ra-pandangan">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">1</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 1</div>
+              <h2 class="lk3-section__title" id="title-ra-pandangan">
+                Pandangan tentang Pendidikan di Indonesia
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="ra-desc-pandangan"></p>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header"><span class="lk3-analisis__icon">◈</span>Narasi Refleksi</div>
+            <div class="lk3-analisis__body" id="ra-narasi-pandangan"></div>
+          </div>
+        </section>
+
+        <!-- ── 2. UPAYA MENJADI GURU PROFESIONAL ── -->
+        <section class="lk3-section fade-up" id="ra-upaya" aria-labelledby="title-ra-upaya">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">2</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 2</div>
+              <h2 class="lk3-section__title" id="title-ra-upaya">
+                Upaya Menjadi Guru yang Profesional
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" id="ra-desc-upaya"></p>
+
+          <div class="lk3-analisis">
+            <div class="lk3-analisis__header"><span class="lk3-analisis__icon">◈</span>Narasi Refleksi</div>
+            <div class="lk3-analisis__body" id="ra-narasi-upaya"></div>
+          </div>
+        </section>
+
+        <!-- ── 3. RENCANA TINDAK LANJUT ── -->
+        <section class="lk3-section fade-up" id="ra-rtl" aria-labelledby="title-ra-rtl">
+          <div class="lk3-section__header">
+            <div class="lk3-section__badge">3</div>
+            <div class="lk3-section__titles">
+              <div class="lk3-section__label">Komponen 3</div>
+              <h2 class="lk3-section__title" id="title-ra-rtl">
+                Rencana Tindak Lanjut
+              </h2>
+            </div>
+          </div>
+
+          <p class="lk3-desc" style="margin-bottom:var(--space-6);">
+            Tiga hal penting yang akan dilakukan saat memulai karier sebagai guru.
+          </p>
+
+          <div class="rtl-grid" id="rtl-grid">
+            <!-- Diisi via JS dari DATA.refleksiAkhir.rencanaTindakLanjut -->
+          </div>
+        </section>
+
+      </div><!-- /lk3-content -->
+    </div><!-- /lk3-layout -->
+
+    <!-- QUOTE PENUTUP -->
+    <section class="quote-section" aria-label="Kutipan penutup">
+      <div class="quote-section__inner">
+        <div style="font-size:1.5rem;opacity:.18;margin-bottom:var(--space-4);letter-spacing:.6em;" aria-hidden="true">武 道 義</div>
+        <p class="quote-section__text fade-up">
+          "PPG bukan akhir dari belajar — ia adalah awal dari perjalanan menjadi guru yang sesungguhnya."
+        </p>
+        <p class="quote-section__attr fade-up delay-2" id="ra-quote-attr">Mahasiswa PPG</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top:var(--space-3);">
+          <span id="footer-prodi"></span><span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size:var(--text-xs);color:rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const p  = DATA.profil;
+    const ra = DATA.refleksiAkhir;
+
+    document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+    document.getElementById('ra-quote-attr').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+    function setEl(id, val, fb) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = (val && !val.startsWith('[')) ? val : (fb || '');
+      if (!val || val.startsWith('[')) el.style.color = 'var(--color-text-light)';
+    }
+    function setBody(id, val) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = val || '';
+      if (!val || val.startsWith('[')) el.classList.add('placeholder');
+    }
+
+    /* Komponen 1 */
+    setEl('ra-desc-pandangan',   ra.pandangan.deskripsi, '[Deskripsi singkat]');
+    setBody('ra-narasi-pandangan', ra.pandangan.narasi);
+
+    /* Komponen 2 */
+    setEl('ra-desc-upaya',   ra.upaya.deskripsi, '[Deskripsi singkat]');
+    setBody('ra-narasi-upaya', ra.upaya.narasi);
+
+    /* Komponen 3 — 3 kartu RTL */
+    const rtlGrid = document.getElementById('rtl-grid');
+    if (rtlGrid && ra.rencanaTindakLanjut) {
+      ra.rencanaTindakLanjut.forEach(function(item, i) {
+        const isJudulPH = !item.judul  || item.judul.startsWith('[');
+        const isNarPH   = !item.narasi || item.narasi.startsWith('[');
+        const delay     = i + 1;
+        const card = document.createElement('div');
+        card.className = 'rtl-card fade-up delay-' + delay;
+        card.innerHTML = `
+          <div class="rtl-card__top">
+            <span class="rtl-card__nomor" aria-hidden="true">${item.nomor}</span>
+            <div class="rtl-card__judul-label">Rencana ${item.nomor}</div>
+            <div class="rtl-card__judul ${isJudulPH ? 'placeholder' : ''}">${item.judul}</div>
+          </div>
+          <div class="rtl-card__body">
+            <div class="rtl-card__narasi-label">Uraian Rencana</div>
+            <p class="rtl-card__narasi ${isNarPH ? 'placeholder' : ''}">${item.narasi}</p>
+          </div>
+        `;
+        rtlGrid.appendChild(card);
+      });
+    }
+
+    /* Sidebar scroll highlight */
+    const sections = document.querySelectorAll('.lk3-section');
+    const navLinks = document.querySelectorAll('.lk3-sidenav__link');
+    sections.forEach(function(s) {
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            navLinks.forEach(function(l) { l.classList.remove('active'); });
+            const a = document.querySelector('.lk3-sidenav__link[href="#' + e.target.id + '"]');
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+
+    /* Footer */
+    document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+    document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+    document.getElementById('footer-univ').textContent      = p.universitas  || '';
+    document.getElementById('footer-copyright').textContent = '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+    const social = document.getElementById('footer-social');
+    if (p.email && !p.email.includes('[')) { const a=document.createElement('a'); a.href='https://mail.google.com/mail/?view=cm&to='+p.email; a.target='_blank'; a.rel='noopener noreferrer'; a.innerHTML='✉ Email'; social.appendChild(a); }
+    if (p.instagram && !p.instagram.includes('[')) { const a=document.createElement('a'); a.href=p.instagram; a.target='_blank'; a.rel='noopener noreferrer'; a.textContent='⊙ Instagram'; social.appendChild(a); }
+  });
+  </script>
+</body>
+</html>

@@ -482,4 +482,61 @@ Saya percaya belajar paling bermakna terjadi lewat pengalaman langsung, bukan se
       analisis:    "Pelaksanaan pembelajaran pada pertemuan ini secara umum berjalan sesuai dengan rencana pada modul ajar, dengan pencapaian tujuan pembelajaran yang baik ditandai oleh pemahaman mayoritas peserta didik terhadap materi ekspresi dan operasi logika (AND, OR, NOT) serta kaitannya dengan algoritma if-else. Kualitas interaksi guru-siswa terlihat sangat baik melalui kuis interaktif berkelompok, di mana peserta didik dibagi menjadi 4 kelompok dan menunjukkan antusiasme tinggi dalam menjawab pertanyaan, menciptakan suasana belajar yang aktif dan menyenangkan. Dari sisi pengelolaan kelas, sempat terjadi kendala teknis berupa proyektor yang tidak dapat tersambung ke extension VGA, yang menyita cukup banyak waktu pembelajaran. Namun, kendala tersebut berhasil diatasi tanpa mengorbankan capaian pembelajaran secara keseluruhan. Sebagai evaluasi diri, pengalaman ini menegaskan pentingnya kesiapan teknis (pengecekan alat sebelum kelas dimulai) sebagai bagian dari manajemen waktu pembelajaran, sementara strategi kuis kelompok terbukti efektif membangun keterlibatan aktif peserta didik dan layak dipertahankan pada pertemuan berikutnya.",
     },
   },
+
+  // ============================================================
+  // UAS — UJIAN AKHIR SEMESTER / E-PORTOFOLIO 2
+  // ============================================================
+  uas: {
+    // 1. Produk Rancangan Pembelajaran Terbaik (siklus 2–4)
+    rancangan: {
+      judul:       "Modul Ajar Informatika Bab 2: Berpikir Komputasional untuk Kelas IX SMP Berbasis Pembelajaran Mendalam",
+      deskripsi:   "Perangkat ajar berupa modul ajar 6 JP (3 pertemuan) untuk peserta didik kelas IX SMP Negeri 12 Surabaya. Modul memuat identitas dan komponen standar kurikulum, yaitu Capaian Pembelajaran Fase D, tujuan pembelajaran per pertemuan, langkah kegiatan, tiga LKPD, bahan bacaan, glosarium, serta instrumen asesmen lengkap dengan kunci jawaban dan rubrik. Seluruh materi Bab 2 dikemas dalam tiga pertemuan, yaitu Empat Fondasi Berpikir Komputasional, Struktur Data (Tree dan Graph), serta Ekspresi dan Operasi Logika.",
+      linkDokumen: "https://drive.google.com/file/d/18_QvSwz3XeR_IQyabhgsRvtgIZb-FEN_/view?usp=drive_link",   // link Google Drive, URL PDF, gambar (jpg/png), atau PowerPoint
+      analisis:    "Keunggulan modul ini terletak pada keterpaduan antara capaian, tujuan, kegiatan, dan asesmen. Setiap tujuan pembelajaran dijawab oleh kegiatan dan instrumen penilaian yang spesifik, sehingga ketercapaian belajar dapat diukur secara jelas dan bukan sekadar diasumsikan. Asesmen disusun berlapis, mulai dari diagnostik lisan saat apersepsi, formatif lewat rubrik observasi diskusi dan LKPD, hingga sumatif berupa soal pilihan ganda, esai, dan proyek kelompok dengan bobot yang eksplisit. Prinsip Pembelajaran Mendalam diterapkan secara konsisten: berkesadaran lewat apersepsi dari pengalaman peserta didik, bermakna lewat analogi seperti peta MRT dan mi instan, serta menggembirakan lewat kuis dan kerja kelompok. Modul juga menyediakan jalur pengayaan dan remedial yang konkret sehingga kebutuhan belajar yang beragam dapat dilayani. Meski demikian, ada ruang perbaikan, yaitu alokasi waktu tahap mengaplikasi yang padat, diferensiasi produk akhir yang belum bervariasi, dan perlunya skenario cadangan bila proyektor bermasalah. Ketiga catatan ini menjadi bahan revisi modul pada siklus mengajar berikutnya.",
+    },
+
+    // 2. Produk Video Pelaksanaan Praktik Mengajar Mandiri
+    video: {
+      judul:       "Video Praktik Mengajar Mandiri Informatika Kelas IX: Pembelajaran Ekspresi dan Operasi Logika Melalui Kuis Interaktif Kelompok",
+      deskripsi:   "Rekaman pelaksanaan Pertemuan 3 Bab 2 Berpikir Komputasional di kelas IX SMP Negeri 12 Surabaya. Pembelajaran diawali apersepsi dan penyampaian konsep ekspresi logika, operator perbandingan, serta operator AND, OR, dan NOT dengan bantuan slide, lalu dilanjutkan kuis interaktif yang dikerjakan peserta didik dalam empat kelompok.",
+      linkVideo:   "https://youtu.be/FiXxNgr_WB0",   // link YouTube atau Google Drive
+      analisis:    "Jika ditinjau dari tahapan pembelajaran, video ini memperlihatkan alur yang runtut: apersepsi untuk membangun kesadaran belajar, penyampaian konsep dengan tabel kebenaran dan contoh sehari-hari, penerapan melalui kuis kelompok, lalu penguatan di akhir pertemuan. Pembagian peserta didik ke dalam empat kelompok membuat kuis menjadi sarana belajar kolaboratif, sehingga peserta didik saling berdiskusi sebelum menjawab dan suasana kelas terasa menyenangkan. Dari sisi guru, saya berperan sebagai fasilitator yang mengajukan pertanyaan, memberi umpan balik langsung, dan meluruskan jawaban yang keliru. Kendala utama adalah proyektor yang sempat tidak terhubung ke extension VGA, sehingga sebagian waktu awal terpakai untuk menyiapkan perangkat dan kegiatan inti menjadi lebih singkat. Hikmahnya, saya perlu memastikan kelengkapan perangkat dan menyiapkan media cadangan sebelum kelas dimulai. Tindak lanjutnya, saya akan memberi lebih banyak latihan pada kombinasi ekspresi logika yang masih menantang bagi peserta didik dan tetap mempertahankan kuis kelompok karena terbukti meningkatkan keterlibatan mereka.",
+    },
+  },
+
+  // ============================================================
+  // REFLEKSI AKHIR PPG
+  // ============================================================
+  refleksiAkhir: {
+    // 1. Pandangan tentang Pendidikan di Indonesia
+    pandangan: {
+      deskripsi:   "Pandangan tentang bagaimana seharusnya pendidikan di Indonesia setelah mengikuti rangkaian Program PPG Prajabatan.",
+      narasi:      "Setelah mengikuti Program PPG, saya memandang bahwa pendidikan di Indonesia seharusnya berpusat pada murid. Pengalaman PPL menunjukkan bahwa satu kelas berisi murid dengan kesiapan dan gaya belajar yang beragam, sehingga pembelajaran perlu diawali asesmen diagnostik, dilakukan secara berdiferensiasi, dan bermakna, bukan sekadar hafalan. Pendidikan juga harus inklusif, memperhatikan aspek sosial emosional, serta membentuk karakter lewat kebiasaan sehari-hari di sekolah. Semua itu bergantung pada guru yang mau terus belajar, berefleksi, dan berkolaborasi untuk memperbaiki praktik mengajarnya.",
+    },
+
+    // 2. Upaya Menjadi Guru yang Profesional
+    upaya: {
+      deskripsi:   "Upaya dan langkah-langkah yang akan dilakukan untuk menjadi guru yang profesional.",
+      narasi:      "Upaya pertama yang akan saya lakukan adalah membiasakan refleksi pada setiap pembelajaran dan menjadikan hasilnya bahan revisi perangkat ajar. Dari praktik mengajar mandiri, saya belajar bahwa temuan nyata di kelas, seperti materi yang masih sulit dipahami murid, adalah dasar terbaik untuk perbaikan berikutnya. Selain itu, saya akan terus mengembangkan kompetensi lewat pelatihan dan komunitas guru, merancang media yang kontekstual dan interaktif, serta menjadi teladan yang berintegritas dalam berkomunikasi dengan murid, rekan guru, dan orang tua.",
+    },
+
+    // 3. Rencana Tindak Lanjut — 3 kartu bernomor
+    rencanaTindakLanjut: [
+      {
+        nomor:   "01",
+        judul:   "Memetakan Kebutuhan Belajar Murid",
+        narasi:  "Pada awal tahun ajaran, saya akan melakukan asesmen diagnostik kognitif dan nonkognitif untuk memetakan kesiapan belajar, gaya belajar, dan kebutuhan setiap murid. Dari pengalaman PPL, saya menyadari bahwa satu kelas berisi murid dengan kemampuan awal yang beragam, sehingga pembelajaran yang menyamaratakan semua murid berisiko membuat sebagian murid tertinggal dan sebagian lain kurang tertantang. Karena itu, pemetaan di awal menjadi dasar yang sangat penting untuk merancang pembelajaran yang tepat sasaran. Saya akan mewujudkannya dengan menyiapkan instrumen asesmen yang sederhana namun terukur, menganalisis hasilnya menjadi peta kebutuhan belajar, lalu mengelompokkan strategi pengajaran sesuai profil kelas, misalnya dengan pendekatan pembelajaran berdiferensiasi dan pengajaran sesuai tingkat kemampuan murid. Hasil pemetaan ini juga akan saya tinjau ulang secara berkala agar strategi mengajar tetap sesuai dengan perkembangan murid.",
+      },
+      {
+        nomor:   "02",
+        judul:   "Merevisi Perangkat Ajar Secara Berkala",
+        narasi:  "Saya akan menyusun perangkat ajar, terutama modul ajar, yang selaras dengan Capaian Pembelajaran, Tujuan Pembelajaran, kegiatan, dan asesmen, kemudian merevisinya pada setiap akhir siklus berdasarkan hasil belajar murid dan refleksi diri. Praktik mengajar mandiri mengajarkan bahwa rancangan yang baik di atas kertas belum tentu berjalan sempurna di kelas, misalnya alokasi waktu yang terlalu padat atau materi tertentu yang ternyata lebih sulit dipahami murid dari perkiraan awal. Oleh karena itu, revisi berkelanjutan penting agar kualitas pembelajaran terus meningkat dan tidak berhenti pada satu versi rancangan. Saya akan mewujudkannya dengan mencatat evaluasi singkat setelah setiap pertemuan, menganalisis data hasil penilaian murid, lalu mendokumentasikan perbaikan yang dilakukan dalam portofolio sebagai bukti perkembangan praktik mengajar saya.",
+      },
+      {
+        nomor:   "03",
+        judul:   "Aktif di Komunitas Belajar",
+        narasi:  "Saya akan berkolaborasi secara aktif dengan guru pamong, rekan sejawat, dan komunitas guru Informatika untuk berbagi praktik baik, bertukar media dan strategi mengajar, serta menerima masukan yang membangun. Guru yang belajar sendirian cenderung terbatas pada sudut pandangnya sendiri, sedangkan guru yang belajar bersama akan bertumbuh lebih cepat karena dapat melihat berbagai pendekatan yang telah terbukti efektif di kelas lain. Saya akan mewujudkannya dengan mengikuti forum guru mata pelajaran dan komunitas belajar di sekolah, membagikan media ajar serta hasil refleksi yang saya miliki, dan bersikap terbuka terhadap observasi kelas dari rekan guru maupun kepala sekolah. Selain itu, saya akan memanfaatkan platform pengembangan kompetensi guru dari Kemendikdasmen untuk memperkuat kompetensi pedagogik dan profesional secara berkelanjutan.",
+      },
+    ],
+  },
 };
