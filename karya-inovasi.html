@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Karya Inovasi — E-Portfolio PPG" />
+  <title>Karya Inovasi — E-Portfolio PPG</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/japan.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    /* ── LAYOUT (sidebar + konten) ─────────────────────────── */
+    .ki-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-10);
+      align-items: start;
+      max-width: var(--container-max);
+      margin-inline: auto;
+      padding-inline: var(--container-pad);
+      padding-block: var(--space-12);
+    }
+
+    /* ── SIDEBAR ─────────────────────────────────────────────── */
+    .ki-sidenav { position: sticky; top: calc(var(--navbar-height) + 16px); }
+    .ki-sidenav__title { font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-4); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border); }
+    .ki-sidenav__list { display: flex; flex-direction: column; gap: var(--space-1); }
+    .ki-sidenav__link { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); font-family: var(--font-sans); font-size: var(--text-sm); color: var(--color-text-secondary); text-decoration: none; transition: all .18s ease; border-left: 3px solid transparent; }
+    .ki-sidenav__link:hover, .ki-sidenav__link.active { background-color: var(--color-bg-alt); color: var(--color-primary); border-left-color: var(--color-primary); }
+    .ki-sidenav__link.active { font-weight: 600; }
+    .ki-sidenav__num { flex-shrink: 0; width: 22px; height: 22px; border-radius: var(--radius-sm); background: var(--color-bg); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; font-size: .6rem; font-weight: 700; color: var(--color-accent); }
+
+    /* ── KONTEN ──────────────────────────────────────────────── */
+    .ki-content { display: flex; flex-direction: column; gap: var(--space-10); }
+    .ki-section { scroll-margin-top: calc(var(--navbar-height) + 24px); }
+
+    /* Section header */
+    .ki-section__header { display: flex; align-items: flex-start; gap: var(--space-4); margin-bottom: var(--space-6); padding-bottom: var(--space-4); border-bottom: 2px solid var(--color-border-light); }
+    .ki-section__badge { flex-shrink: 0; width: 40px; height: 40px; border-radius: var(--radius-md); background: var(--color-primary); color: #E8E4DC; display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: 1rem; font-weight: 700; margin-top: 2px; }
+    .ki-section__titles { flex: 1; }
+    .ki-section__label { font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-1); }
+    .ki-section__title { font-family: var(--font-serif); font-size: var(--text-xl); font-weight: 700; color: var(--color-primary-dark); line-height: 1.3; }
+
+    /* Desc box */
+    .ki-desc { background: var(--color-bg); border-left: 3px solid var(--color-primary); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: var(--space-4) var(--space-5); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.8; margin-bottom: var(--space-5); text-align: justify; text-justify: inter-word; }
+
+    /* Analisis / narasi box */
+    .ki-box { background: var(--color-white); border: 1px solid var(--color-border-light); border-top: 3px solid var(--color-primary); border-radius: var(--radius-md); overflow: hidden; margin-bottom: var(--space-5); }
+    .ki-box__header { display: flex; align-items: center; gap: var(--space-2); padding: var(--space-3) var(--space-5); background: var(--color-bg-alt); border-bottom: 1px solid var(--color-border-light); font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--color-primary-dark); }
+    .ki-box__icon { color: var(--color-accent); }
+    .ki-box__body { padding: var(--space-5) var(--space-6); font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.8; }
+    .ki-box__body.placeholder { color: var(--color-text-light); font-style: italic; }
+
+    /* ── PEMBUKA: judul karya ─────────────────────────────────── */
+    .ki-intro {
+      background: var(--color-white);
+      border: 1px solid var(--color-border-light);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      padding: var(--space-6) var(--space-8);
+      margin-bottom: var(--space-8);
+    }
+    .ki-intro__label { font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-2); }
+    .ki-intro__judul { font-family: var(--font-serif); font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary-dark); line-height: 1.25; margin-bottom: var(--space-5); }
+    .ki-intro__judul.placeholder { color: var(--color-text-light); font-style: italic; }
+    .ki-intro__deskripsi { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.8; text-align: justify; text-justify: inter-word; }
+    .ki-intro__deskripsi.placeholder { color: var(--color-text-light); font-style: italic; }
+
+    /* ── TUJUAN: daftar bernomor ──────────────────────────────── */
+    .ki-tujuan-list { list-style: none; display: flex; flex-direction: column; gap: var(--space-3); }
+    .ki-tujuan-item { display: flex; gap: var(--space-4); align-items: flex-start; padding: var(--space-3) var(--space-4); background: var(--color-bg); border-radius: var(--radius-md); border-left: 3px solid var(--color-primary); }
+    .ki-tujuan-num { flex-shrink: 0; width: 28px; height: 28px; background: var(--color-primary); color: #E8E4DC; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-size: .75rem; font-weight: 700; margin-top: 1px; }
+    .ki-tujuan-text { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.75; text-align: justify; text-justify: inter-word; }
+    .ki-tujuan-text.placeholder { color: var(--color-text-light); font-style: italic; }
+
+    /* ── KARTU KELEBIHAN / KEKURANGAN ─────────────────────────── */
+    .ki-card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); margin-bottom: var(--space-5); }
+    .ki-card { background: var(--color-white); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+    .ki-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+    .ki-card--lebih .ki-card__top { background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary)); }
+    .ki-card--kurang .ki-card__top { background: linear-gradient(135deg, #3A2010, #6B3A20); }
+
+    .ki-card__top { padding: var(--space-4) var(--space-4) var(--space-3); position: relative; min-height: 90px; }
+    .ki-card__num { position: absolute; top: var(--space-2); right: var(--space-3); font-family: var(--font-serif); font-size: 2.5rem; font-weight: 900; color: rgba(255,255,255,.1); line-height: 1; user-select: none; }
+    .ki-card__num-label { font-family: var(--font-sans); font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: var(--space-1); }
+    .ki-card__judul { font-family: var(--font-serif); font-size: var(--text-sm); font-weight: 700; color: #E8E4DC; line-height: 1.35; min-height: 2.5em; }
+    .ki-card__judul.placeholder { color: rgba(232,228,220,.4); font-style: italic; }
+    .ki-card__body { padding: var(--space-4) var(--space-4); }
+    .ki-card__penjelasan { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.75; text-align: justify; text-justify: inter-word; }
+    .ki-card__penjelasan.placeholder { color: var(--color-text-light); font-style: italic; }
+
+    /* Kotak rencana perbaikan */
+    .ki-perbaikan { background: linear-gradient(135deg, var(--color-bg), var(--color-white)); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: var(--space-5) var(--space-6); }
+    .ki-perbaikan__label { font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-3); display: flex; align-items: center; gap: var(--space-2); }
+    .ki-perbaikan__text { font-size: var(--text-sm); color: var(--color-text-secondary); line-height: 1.8; text-align: justify; text-justify: inter-word; white-space: pre-line; }
+    .ki-perbaikan__text.placeholder { color: var(--color-text-light); font-style: italic; }
+
+    /* ── DOKUMENTASI ─────────────────────────────────────────── */
+    .ki-video-wrap { margin-bottom: var(--space-5); }
+    .ki-video-label { font-family: var(--font-sans); font-size: .65rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--color-accent); margin-bottom: var(--space-3); }
+    .ki-video-frame { width: 100%; border-radius: var(--radius-md); border: 1px solid var(--color-border); overflow: hidden; background: var(--color-bg-alt); }
+    .ki-video-frame iframe { width: 100%; height: 400px; border: none; display: block; }
+
+    .ki-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+    .ki-gallery-item { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/3; background: var(--color-bg-alt); cursor: pointer; border: 1px solid var(--color-border-light); transition: transform .22s ease, box-shadow .22s ease; }
+    .ki-gallery-item:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+    .ki-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
+    .ki-gallery-item:hover img { transform: scale(1.05); }
+    .ki-gallery-item__caption { position: absolute; bottom: 0; left: 0; right: 0; padding: var(--space-2) var(--space-3); background: linear-gradient(to top, rgba(0,0,0,.65), transparent); color: #fff; font-size: var(--text-xs); font-weight: 500; line-height: 1.4; }
+    .ki-gallery-placeholder { height: 160px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--space-2); color: var(--color-text-muted); font-size: var(--text-xs); text-align: center; padding: var(--space-4); }
+    .ki-gallery-empty { grid-column: 1/-1; text-align: center; padding: var(--space-12) 0; color: var(--color-text-muted); }
+    .ki-gallery-empty__icon { font-size: 2.5rem; opacity: .3; margin-bottom: var(--space-3); }
+
+    /* Lightbox karya inovasi */
+    .ki-lightbox { position: fixed; inset: 0; z-index: 9800; background: rgba(5,8,16,.94); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .25s ease; padding: var(--space-6); }
+    .ki-lightbox.open { opacity: 1; pointer-events: all; }
+    .ki-lightbox__img { max-width: 90vw; max-height: 86vh; object-fit: contain; border-radius: var(--radius-lg); display: block; box-shadow: 0 8px 48px rgba(0,0,0,.6); }
+    .ki-lightbox__caption { position: absolute; bottom: var(--space-5); left: 50%; transform: translateX(-50%); color: rgba(255,255,255,.75); font-size: var(--text-sm); text-align: center; background: rgba(0,0,0,.4); padding: var(--space-2) var(--space-5); border-radius: var(--radius-full); backdrop-filter: blur(4px); white-space: nowrap; max-width: 80vw; overflow: hidden; text-overflow: ellipsis; }
+    .ki-lightbox__close { position: fixed; top: var(--space-5); right: var(--space-5); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.15); color: #fff; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: background .18s; z-index: 9801; }
+    .ki-lightbox__close:hover { background: rgba(255,255,255,.28); }
+    .ki-lightbox__prev, .ki-lightbox__next { position: fixed; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.12); color: #fff; font-size: 1.5rem; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: background .18s; z-index: 9801; }
+    .ki-lightbox__prev:hover, .ki-lightbox__next:hover { background: rgba(255,255,255,.25); }
+    .ki-lightbox__prev { left: var(--space-4); }
+    .ki-lightbox__next { right: var(--space-4); }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .ki-layout { grid-template-columns: 1fr; }
+      .ki-sidenav { position: static; }
+      .ki-sidenav__list { flex-direction: row; flex-wrap: wrap; gap: var(--space-2); }
+      .ki-sidenav__link { border-left: none; border-bottom: 2px solid transparent; border-radius: var(--radius-sm); }
+      .ki-sidenav__link:hover, .ki-sidenav__link.active { border-left: none; border-bottom-color: var(--color-primary); }
+      .ki-card-grid { grid-template-columns: repeat(2, 1fr); }
+      .ki-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .ki-card-grid { grid-template-columns: 1fr; }
+      .ki-gallery { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__brand" aria-label="Beranda E-Portfolio PPG">
+        <span class="navbar__brand-top">E-Portfolio</span>
+        <span class="navbar__brand-name" id="navbar-name">Mahasiswa PPG</span>
+      </a>
+      <nav class="navbar__nav" role="navigation" aria-label="Navigasi Utama">
+        <a href="index.html"           class="navbar__link">Home</a>
+        <a href="profil.html"          class="navbar__link">Profil Mahasiswa</a>
+        <a href="lokasi.html"          class="navbar__link">Lokasi Perkuliahan</a>
+        <a href="refleksi.html"        class="navbar__link">Refleksi Mata Kuliah</a>
+        <a href="lk3.html"             class="navbar__link">LK 3 PPL Mandiri</a>
+        <a href="uts.html"             class="navbar__link">UTS</a>
+        <a href="uas.html"             class="navbar__link">UAS</a>
+        <a href="model-guru.html"      class="navbar__link">Model Guru</a>
+        <a href="refleksi-akhir.html"  class="navbar__link">Refleksi Akhir PPG</a>
+        <a href="karya-inovasi.html"   class="navbar__link active">Karya Inovasi</a>
+        <a href="dokumentasi.html"     class="navbar__link">Dokumentasi PPG</a>
+      </nav>
+      <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="jp-wave-bar" aria-hidden="true"></div>
+
+  <nav class="navbar__drawer" id="navDrawer" role="navigation" aria-label="Menu Mobile">
+    <a href="index.html"           class="navbar__link">Home</a>
+    <a href="profil.html"          class="navbar__link">Profil Mahasiswa</a>
+    <a href="lokasi.html"          class="navbar__link">Lokasi Perkuliahan</a>
+    <a href="refleksi.html"        class="navbar__link">Refleksi Mata Kuliah</a>
+    <a href="lk3.html"             class="navbar__link">LK 3 PPL Mandiri</a>
+    <a href="uts.html"             class="navbar__link">UTS</a>
+    <a href="uas.html"             class="navbar__link">UAS</a>
+    <a href="model-guru.html"      class="navbar__link">Model Guru</a>
+    <a href="refleksi-akhir.html"  class="navbar__link">Refleksi Akhir PPG</a>
+    <a href="karya-inovasi.html"   class="navbar__link active">Karya Inovasi</a>
+    <a href="dokumentasi.html"     class="navbar__link">Dokumentasi PPG</a>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="page-header">
+      <div class="page-header__inner">
+        <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>Karya Inovasi</span>
+        </nav>
+        <p class="page-header__label">Inovasi Pembelajaran · PPG Prajabatan</p>
+        <h1 class="page-header__title">Karya Inovasi</h1>
+        <p class="page-header__subtitle">
+          Dokumentasi karya inovasi pembelajaran yang dikembangkan selama mengikuti
+          Program Pendidikan Profesi Guru.
+        </p>
+        <div style="display:flex;gap:var(--space-3);margin-top:var(--space-6);flex-wrap:wrap;">
+          <a href="index.html" class="btn btn--outline btn--sm"
+             style="color:#E8E4DC;border-color:rgba(232,228,220,0.4);">← Beranda</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN LAYOUT -->
+    <div class="ki-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="ki-sidenav fade-up" aria-label="Sub-navigasi Karya Inovasi">
+        <div class="ki-sidenav__title">Komponen</div>
+        <ul class="ki-sidenav__list" role="list">
+          <li><a href="#ki-tujuan"       class="ki-sidenav__link active">
+            <span class="ki-sidenav__num">1</span>Tujuan
+          </a></li>
+          <li><a href="#ki-kelebihan"    class="ki-sidenav__link">
+            <span class="ki-sidenav__num">2</span>Kelebihan
+          </a></li>
+          <li><a href="#ki-kekurangan"   class="ki-sidenav__link">
+            <span class="ki-sidenav__num">3</span>Kekurangan
+          </a></li>
+          <li><a href="#ki-dokumentasi"  class="ki-sidenav__link">
+            <span class="ki-sidenav__num">4</span>Dokumentasi
+          </a></li>
+        </ul>
+      </aside>
+
+      <!-- KONTEN -->
+      <div class="ki-content">
+
+        <!-- PEMBUKA -->
+        <div class="ki-intro fade-up delay-1">
+          <div class="ki-intro__label">Karya Inovasi</div>
+          <div class="ki-intro__judul" id="ki-judul">[Nama Karya Inovasi]</div>
+          <p class="ki-intro__deskripsi" id="ki-deskripsi">[Deskripsi karya inovasi]</p>
+        </div>
+
+        <!-- ── 1. TUJUAN ── -->
+        <section class="ki-section fade-up" id="ki-tujuan" aria-labelledby="title-ki-tujuan">
+          <div class="ki-section__header">
+            <div class="ki-section__badge">1</div>
+            <div class="ki-section__titles">
+              <div class="ki-section__label">Komponen 1</div>
+              <h2 class="ki-section__title" id="title-ki-tujuan">Tujuan</h2>
+            </div>
+          </div>
+
+          <p class="ki-desc" id="ki-tujuan-desc"></p>
+
+          <div class="ki-box">
+            <div class="ki-box__header">
+              <span class="ki-box__icon">◈</span>Uraian Tujuan
+            </div>
+            <div class="ki-box__body">
+              <ol class="ki-tujuan-list" id="ki-tujuan-list"></ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ── 2. KELEBIHAN ── -->
+        <section class="ki-section fade-up" id="ki-kelebihan" aria-labelledby="title-ki-kelebihan">
+          <div class="ki-section__header">
+            <div class="ki-section__badge">2</div>
+            <div class="ki-section__titles">
+              <div class="ki-section__label">Komponen 2</div>
+              <h2 class="ki-section__title" id="title-ki-kelebihan">Kelebihan</h2>
+            </div>
+          </div>
+          <div class="ki-card-grid" id="ki-kelebihan-grid"></div>
+        </section>
+
+        <!-- ── 3. KEKURANGAN ── -->
+        <section class="ki-section fade-up" id="ki-kekurangan" aria-labelledby="title-ki-kekurangan">
+          <div class="ki-section__header">
+            <div class="ki-section__badge">3</div>
+            <div class="ki-section__titles">
+              <div class="ki-section__label">Komponen 3</div>
+              <h2 class="ki-section__title" id="title-ki-kekurangan">Kekurangan</h2>
+            </div>
+          </div>
+          <div class="ki-card-grid" id="ki-kekurangan-grid"></div>
+
+          <!-- Rencana perbaikan -->
+          <div class="ki-perbaikan">
+            <div class="ki-perbaikan__label">
+              <span>🔧</span>Rencana Perbaikan
+            </div>
+            <p class="ki-perbaikan__text" id="ki-perbaikan"></p>
+          </div>
+        </section>
+
+        <!-- ── 4. DOKUMENTASI ── -->
+        <section class="ki-section fade-up" id="ki-dokumentasi" aria-labelledby="title-ki-dokumentasi">
+          <div class="ki-section__header">
+            <div class="ki-section__badge">4</div>
+            <div class="ki-section__titles">
+              <div class="ki-section__label">Komponen 4</div>
+              <h2 class="ki-section__title" id="title-ki-dokumentasi">Dokumentasi</h2>
+            </div>
+          </div>
+
+          <!-- Video opsional -->
+          <div class="ki-video-wrap" id="ki-video-wrap" style="display:none;">
+            <div class="ki-video-label">🎥 Video Karya Inovasi</div>
+            <div class="ki-video-frame" id="ki-video-frame"></div>
+          </div>
+
+          <!-- Galeri foto -->
+          <div class="ki-gallery" id="ki-gallery"></div>
+        </section>
+
+      </div><!-- /ki-content -->
+    </div><!-- /ki-layout -->
+  </main>
+
+  <!-- LIGHTBOX KARYA INOVASI -->
+  <div class="ki-lightbox" id="ki-lightbox" aria-modal="true" aria-label="Lihat foto" role="dialog">
+    <button class="ki-lightbox__close" id="ki-lb-close" aria-label="Tutup">✕</button>
+    <button class="ki-lightbox__prev"  id="ki-lb-prev"  aria-label="Sebelumnya">‹</button>
+    <button class="ki-lightbox__next"  id="ki-lb-next"  aria-label="Berikutnya">›</button>
+    <img class="ki-lightbox__img" id="ki-lb-img" src="" alt="" />
+    <div class="ki-lightbox__caption" id="ki-lb-caption"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-label">E-Portfolio</span>
+        <span class="footer__brand-name" id="footer-nama">Mahasiswa PPG</span>
+        <div class="footer__meta" style="margin-top:var(--space-3);">
+          <span id="footer-prodi"></span><span id="footer-univ"></span>
+        </div>
+      </div>
+      <div><div class="footer__social" id="footer-social"></div></div>
+      <div class="footer__divider"></div>
+      <div class="footer__bottom">
+        <p class="footer__copyright" id="footer-copyright">© 2026 E-Portfolio Mahasiswa PPG</p>
+        <p style="font-size:var(--text-xs);color:rgba(255,255,255,0.3);">Program Pendidikan Profesi Guru</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sakura.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const p  = DATA.profil;
+    const ki = DATA.karyaInovasi;
+
+    document.getElementById('navbar-name').textContent = p.namaLengkap || 'Mahasiswa PPG';
+
+    /* ── Helper ── */
+    function isph(v) { return !v || v.startsWith('['); }
+    function setText(id, val, fb) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.textContent = isph(val) ? (fb || val || '') : val;
+      if (isph(val)) el.classList.add('placeholder');
+    }
+
+    /* ── Pembuka ── */
+    setText('ki-judul',      ki.judul,      '[Nama Karya Inovasi]');
+    setText('ki-deskripsi',  ki.deskripsi,  '[Deskripsi karya inovasi]');
+
+    /* ── Tujuan ── */
+    setText('ki-tujuan-desc', ki.tujuanDeskripsi, '[Deskripsi singkat tujuan]');
+    const tujuanList = document.getElementById('ki-tujuan-list');
+    (ki.tujuan || []).forEach(function(t, i) {
+      const li = document.createElement('li');
+      li.className = 'ki-tujuan-item';
+      const ph = isph(t);
+      li.innerHTML = `
+        <span class="ki-tujuan-num">${i + 1}</span>
+        <span class="ki-tujuan-text${ph ? ' placeholder' : ''}">${t}</span>`;
+      tujuanList.appendChild(li);
+    });
+
+    /* ── Kartu helper ── */
+    function buildCards(gridId, items, cssClass, labelPrefix) {
+      const grid = document.getElementById(gridId);
+      (items || []).forEach(function(item, i) {
+        const ph_j = isph(item.judul);
+        const ph_p = isph(item.penjelasan);
+        const card = document.createElement('div');
+        card.className = 'ki-card ' + cssClass + ' fade-up delay-' + (i + 1);
+        card.innerHTML = `
+          <div class="ki-card__top">
+            <span class="ki-card__num" aria-hidden="true">${String(i + 1).padStart(2,'0')}</span>
+            <div class="ki-card__num-label">${labelPrefix} ${String(i + 1).padStart(2,'0')}</div>
+            <div class="ki-card__judul${ph_j ? ' placeholder' : ''}">${item.judul}</div>
+          </div>
+          <div class="ki-card__body">
+            <p class="ki-card__penjelasan${ph_p ? ' placeholder' : ''}">${item.penjelasan}</p>
+          </div>`;
+        grid.appendChild(card);
+      });
+    }
+
+    buildCards('ki-kelebihan-grid', ki.kelebihan, 'ki-card--lebih',  'Kelebihan');
+    buildCards('ki-kekurangan-grid', ki.kekurangan, 'ki-card--kurang', 'Kekurangan');
+
+    /* ── Rencana Perbaikan ── */
+    const perbaikanEl = document.getElementById('ki-perbaikan');
+    if (perbaikanEl) {
+      perbaikanEl.textContent = ki.rencanaPerbaikan || '';
+      if (isph(ki.rencanaPerbaikan)) perbaikanEl.classList.add('placeholder');
+    }
+
+    /* ── Video ── */
+    if (ki.linkVideo && ki.linkVideo.trim() !== '') {
+      const wrap  = document.getElementById('ki-video-wrap');
+      const frame = document.getElementById('ki-video-frame');
+      if (wrap && frame) {
+        wrap.style.display = '';
+        const link  = ki.linkVideo;
+        const lower = link.toLowerCase();
+        const yt    = link.match(/(?:youtu\.be\/|youtube\.com\/watch\?v=)([\w-]+)/);
+        if (yt) {
+          frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${yt[1]}" allowfullscreen loading="lazy"></iframe>`;
+        } else {
+          const gd = link.match(/\/d\/([\w-]+)/);
+          if (gd) frame.innerHTML = `<iframe src="https://drive.google.com/file/d/${gd[1]}/preview" allowfullscreen loading="lazy"></iframe>`;
+          else    frame.innerHTML = `<iframe src="${link}" allowfullscreen loading="lazy"></iframe>`;
+        }
+      }
+    }
+
+    /* ── Galeri ── */
+    const gallery = document.getElementById('ki-gallery');
+    const photos  = (ki.dokumentasi || []).filter(function(d) { return d.gambar && d.gambar.trim() !== ''; });
+
+    if (photos.length === 0) {
+      gallery.innerHTML = `
+        <div class="ki-gallery-empty">
+          <div class="ki-gallery-empty__icon">📷</div>
+          <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Dokumentasi belum tersedia</p>
+          <p style="font-size:var(--text-xs);color:var(--color-text-light);margin-top:var(--space-2);">
+            Isi <code>DATA.karyaInovasi.dokumentasi[].gambar</code> di <code>js/data.js</code>
+          </p>
+        </div>`;
+    } else {
+      photos.forEach(function(d, i) {
+        const item = document.createElement('div');
+        item.className = 'ki-gallery-item';
+        item.dataset.index = i;
+        item.setAttribute('tabindex', '0');
+        item.setAttribute('aria-label', d.caption || 'Foto dokumentasi');
+        item.innerHTML = `
+          <img src="${d.gambar}" alt="${d.caption || ''}" loading="lazy" />
+          ${d.caption ? `<div class="ki-gallery-item__caption">${d.caption}</div>` : ''}`;
+        gallery.appendChild(item);
+      });
+    }
+
+    /* ── Lightbox ── */
+    let lbPhotos = photos;
+    let lbIdx    = 0;
+
+    function openLb(idx) {
+      lbIdx = idx;
+      renderLb();
+      const lb = document.getElementById('ki-lightbox');
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      document.getElementById('ki-lb-close').focus();
+    }
+
+    function closeLb() {
+      document.getElementById('ki-lightbox').classList.remove('open');
+      document.getElementById('ki-lightbox').setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    function renderLb() {
+      if (!lbPhotos.length) return;
+      const d = lbPhotos[lbIdx];
+      document.getElementById('ki-lb-img').src     = d.gambar;
+      document.getElementById('ki-lb-img').alt     = d.caption || '';
+      document.getElementById('ki-lb-caption').textContent = d.caption || '';
+    }
+
+    gallery.addEventListener('click', function(e) {
+      const item = e.target.closest('.ki-gallery-item');
+      if (!item) return;
+      openLb(parseInt(item.dataset.index, 10));
+    });
+    gallery.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        const item = e.target.closest('.ki-gallery-item');
+        if (item) { e.preventDefault(); openLb(parseInt(item.dataset.index, 10)); }
+      }
+    });
+
+    document.getElementById('ki-lb-close').addEventListener('click', closeLb);
+    document.getElementById('ki-lb-prev').addEventListener('click', function() {
+      lbIdx = (lbIdx - 1 + lbPhotos.length) % lbPhotos.length; renderLb();
+    });
+    document.getElementById('ki-lb-next').addEventListener('click', function() {
+      lbIdx = (lbIdx + 1) % lbPhotos.length; renderLb();
+    });
+    document.getElementById('ki-lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLb();
+    });
+    document.addEventListener('keydown', function(e) {
+      const lb = document.getElementById('ki-lightbox');
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape')     closeLb();
+      if (e.key === 'ArrowLeft')  { lbIdx = (lbIdx - 1 + lbPhotos.length) % lbPhotos.length; renderLb(); }
+      if (e.key === 'ArrowRight') { lbIdx = (lbIdx + 1) % lbPhotos.length; renderLb(); }
+    });
+
+    /* ── Sidebar scroll highlight ── */
+    const sections = document.querySelectorAll('.ki-section');
+    const navLinks = document.querySelectorAll('.ki-sidenav__link');
+    sections.forEach(function(s) {
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            navLinks.forEach(function(l) { l.classList.remove('active'); });
+            const a = document.querySelector('.ki-sidenav__link[href="#' + e.target.id + '"]');
+            if (a) a.classList.add('active');
+          }
+        });
+      }, { rootMargin: '-30% 0px -60% 0px' }).observe(s);
+    });
+
+    /* ── Footer ── */
+    document.getElementById('footer-nama').textContent      = p.namaLengkap || 'Mahasiswa PPG';
+    document.getElementById('footer-prodi').textContent     = p.bidangStudi  || '';
+    document.getElementById('footer-univ').textContent      = p.universitas  || '';
+    document.getElementById('footer-copyright').textContent = '© ' + new Date().getFullYear() + ' E-Portfolio Mahasiswa PPG';
+    const social = document.getElementById('footer-social');
+    if (p.email && !p.email.includes('[')) {
+      const a = document.createElement('a');
+      a.href = 'https://mail.google.com/mail/?view=cm&to=' + p.email;
+      a.target = '_blank'; a.rel = 'noopener noreferrer'; a.innerHTML = '✉ Email';
+      social.appendChild(a);
+    }
+    if (p.instagram && !p.instagram.includes('[')) {
+      const a = document.createElement('a');
+      a.href = p.instagram; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      a.textContent = '⊙ Instagram'; social.appendChild(a);
+    }
+  });
+  </script>
+</body>
+</html>

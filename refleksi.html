@@ -207,6 +207,7 @@
         <a href="uas.html"            class="navbar__link">UAS</a>
         <a href="model-guru.html"   class="navbar__link">Model Guru</a>
         <a href="refleksi-akhir.html" class="navbar__link">Refleksi Akhir PPG</a>
+        <a href="karya-inovasi.html"   class="navbar__link">Karya Inovasi</a>
         <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
       </nav>
       <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false" aria-controls="navDrawer">
@@ -228,7 +229,8 @@
         <a href="uas.html"            class="navbar__link">UAS</a>
     <a href="model-guru.html"   class="navbar__link">Model Guru</a>
         <a href="refleksi-akhir.html" class="navbar__link">Refleksi Akhir PPG</a>
-    <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
+    <a href="karya-inovasi.html"   class="navbar__link">Karya Inovasi</a>
+        <a href="dokumentasi.html"  class="navbar__link">Dokumentasi PPG</a>
   </nav>
 
   <main id="main-content">
@@ -375,7 +377,6 @@
           const itemId = 'acc-' + semesterNum + '-' + idx;
 
           const namaDisplay = val(mk.nama, 'Mata Kuliah ' + idx + ' (Semester ' + semesterNum + ')');
-          const dosenDisplay = val(mk.dosen, '[ Nama Dosen Pengampu ]');
 
           // ── Blok 4C ─────────────────────────────────────
           const c4 = mk.c4 || {};
@@ -443,7 +444,6 @@
                 <span class="accordion-trigger__num" aria-hidden="true">${idx}</span>
                 <span class="accordion-trigger__title">${namaDisplay}</span>
               </span>
-              <span class="accordion-trigger__dosen-inline">${dosenDisplay}</span>
               <svg class="accordion-trigger__icon" viewBox="0 0 24 24" fill="none"
                    stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M6 9l6 6 6-6"/>
@@ -458,15 +458,11 @@
             >
               <div class="accordion-body__inner refl-body-inner">
 
-                <!-- Info atas: nama + dosen -->
-                <div class="refl-header-info">
+                <!-- Info atas: nama mata kuliah -->
+                <div class="refl-header-info" style="grid-template-columns:1fr;">
                   <div>
                     <div class="refl-header-label">Mata Kuliah</div>
                     <div class="refl-header-nama">${namaDisplay}</div>
-                  </div>
-                  <div>
-                    <div class="refl-header-label">Dosen / Pengampu</div>
-                    <div class="refl-header-dosen">${dosenDisplay}</div>
                   </div>
                 </div>
 

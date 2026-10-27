@@ -118,7 +118,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
   semester1: [
     {
       nama:    "FILOSOFI PENDIDIKAN",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah Filosofi Pendidikan Indonesia mengubah cara pandang saya terhadap hakikat pendidikan. Saya memahami bahwa pendidikan bukan sekadar proses mentransfer pengetahuan, tetapi proses menuntun peserta didik agar berkembang sesuai kodrat alam dan kodrat zamannya sebagaimana pemikiran Ki Hadjar Dewantara.",
         challenge:  "Tantangan terbesar adalah mengubah kebiasaan pembelajaran yang masih berpusat pada guru menjadi pembelajaran yang benar-benar memerdekakan peserta didik.",
@@ -130,7 +129,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "GROWTH MINDSET",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Melalui mata kuliah ini saya memahami bahwa pola pikir seorang guru sangat memengaruhi keberhasilan peserta didik. Guru yang memiliki growth mindset percaya bahwa kemampuan dapat berkembang melalui usaha, latihan, dan refleksi sehingga mampu menumbuhkan semangat belajar pada peserta didik.",
         challenge:  "Mengubah pola pikir tetap (fixed mindset) menjadi growth mindset membutuhkan konsistensi. Saya harus belajar menerima kesalahan sebagai bagian dari proses belajar dan tidak mudah menyerah ketika menghadapi kesulitan.",
@@ -142,7 +140,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "KEBUGARAN JASMANI",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah ini menyadarkan saya bahwa kebugaran jasmani merupakan bagian penting dari profesionalisme seorang guru. Kondisi fisik yang sehat akan mendukung produktivitas, konsentrasi, serta kualitas pembelajaran di kelas.",
         challenge:  "Tantangan yang saya hadapi adalah membangun kebiasaan hidup sehat secara konsisten melalui olahraga teratur, pola makan seimbang, dan manajemen waktu.",
@@ -154,7 +151,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "LITERASI KESEHATAN MENTAL",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah ini membuka wawasan saya bahwa kesehatan mental memiliki pengaruh besar terhadap proses belajar peserta didik maupun guru. Lingkungan belajar yang aman secara psikologis akan meningkatkan motivasi dan kesejahteraan belajar.",
         challenge:  "Tantangannya adalah menghilangkan stigma terhadap kesehatan mental dan belajar memberikan dukungan yang tepat kepada peserta didik yang mengalami masalah psikologis.",
@@ -166,7 +162,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "PEMBELAJARAN MENDALAM DAN ASESMEN DASAR",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah ini memperkuat pemahaman saya bahwa pembelajaran harus berorientasi pada pemahaman yang bermakna, bukan sekadar menghafal materi. Asesmen juga harus menjadi bagian dari proses belajar untuk membantu perkembangan peserta didik.",
         challenge:  "Menyusun pembelajaran yang mendorong berpikir tingkat tinggi dan membuat asesmen autentik memerlukan perencanaan yang matang serta kreativitas guru.",
@@ -178,7 +173,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "PEMAHAMAN PESERTA DIDIK DAN PEMBELAJARAN",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah ini membuat saya memahami bahwa setiap peserta didik memiliki karakteristik, kebutuhan, gaya belajar, kemampuan, serta latar belakang yang berbeda. Guru perlu memahami keberagaman tersebut agar mampu memberikan layanan pembelajaran yang tepat.",
         challenge:  "Tantangan terbesar adalah merancang pembelajaran yang mampu mengakomodasi seluruh peserta didik, termasuk mereka yang memiliki kebutuhan belajar yang beragam.",
@@ -190,7 +184,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Praktik Pengalaman Lapangan (PPL) Terbimbing",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah Praktik Pengalaman Lapangan (PPL) Terbimbing memberikan ruang bagi saya untuk menghubungkan teori-teori pedagogik yang telah dipelajari pada mata kuliah Pembelajaran Mendalam dan Asesmen (PMA) Dasar, Asesmen dan Layanan BK, serta Pemahaman tentang Peserta Didik dan Pembelajaran dengan praktik nyata di kelas Informatika SMA Labschool UNESA 1. Proses orientasi, observasi, dan asistensi yang dijalani membuat saya menyadari bahwa memahami karakteristik peserta didik bukan sekadar konsep di atas kertas, melainkan kebutuhan nyata yang menentukan bagaimana strategi pembelajaran harus dirancang. Bimbingan dari Guru Pamong Bapak Setiawan, S.T. dan arahan dari Dosen Pembimbing Lapangan Ibu Dr. Yeni Anistyasari, S.Pd., M.Kom. membantu saya mengaitkan pengalaman mengajar terbimbing dengan pendekatan Pembelajaran Mendalam sebagai fondasi berpikir dan bertindak dalam praktik mengajar.",
         challenge:  "Tantangan utama yang saya hadapi selama PPL Terbimbing adalah menyesuaikan rancangan pembelajaran Informatika dengan keberagaman kemampuan awal peserta didik, mengingat tidak semua siswa memiliki latar belakang literasi digital yang setara. Selain itu, transisi dari peran pengamat (observer) menuju peran pengajar yang bertanggung jawab secara terbimbing menuntut saya untuk lebih peka terhadap dinamika kelas, mengelola waktu pembelajaran secara efektif, serta memberikan asesmen yang benar-benar mencerminkan pemahaman peserta didik, bukan sekadar hasil akhir tugas. Umpan balik dari Guru Pamong dan DPL turut menjadi tantangan tersendiri untuk terus merefleksikan dan memperbaiki praktik mengajar secara berkelanjutan.",
@@ -208,7 +201,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
   semester2: [
     {
       nama:    "Pencegahan dan Penanganan Kekerasan di Lingkungan Pendidikan",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata diklat ini menghubungkan saya dengan realitas bahwa lingkungan pendidikan yang aman dan nyaman bukan sesuatu yang terjadi dengan sendirinya, melainkan hasil dari pemahaman yang utuh tentang berbagai bentuk gangguan keamanan, relasi kuasa, bias implisit, dan ancaman kekerasan baik secara langsung maupun berbasis elektronik. Materi ini terhubung erat dengan pengalaman saya berinteraksi dengan peserta didik di SMP Negeri 12 Surabaya, di mana kepekaan terhadap tanda-tanda kekerasan maupun ketidaknyamanan siswa menjadi bagian penting dari peran seorang pendidik.",
         challenge:  "Tantangan yang saya hadapi adalah memahami secara mendalam batas antara relasi kuasa yang wajar dalam konteks pendidikan dan relasi kuasa yang berpotensi disalahgunakan, termasuk memahami konsep persetujuan (consent) dalam interaksi sosial di dalam maupun luar jaringan yang selama ini jarang dibahas secara eksplisit dalam pendidikan formal. Selain itu, mengenali ancaman kekerasan berbasis elektronik menuntut pembaruan wawasan mengingat bentuk dan modusnya terus berkembang seiring perkembangan teknologi digital yang digunakan peserta didik sehari-hari.",
@@ -220,7 +212,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Pembelajaran Mendalam dan Asesmen Lanjut (PMAL)",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah PMAL menghubungkan pemahaman saya tentang asesmen sebagai alat evaluasi semata menjadi asesmen sebagai sumber data untuk merancang pembelajaran yang adaptif. Pengalaman menyusun instrumen asesmen awal dan Peta Profil Kebutuhan Belajar Murid untuk kelas Informatika di SMP Negeri 12 Surabaya menjadi jembatan nyata antara teori kerangka Desain Universal untuk Pembelajaran (DUP), Teaching at the Right Level (TaRL), dan Culturally Responsive Teaching (CRT) dengan praktik di kelas.",
         challenge:  "Tantangan terbesar adalah mengintegrasikan tiga kerangka besar (DUP, TaRL, CRT) sekaligus ke dalam satu rancangan pembelajaran yang koheren, tanpa membuatnya menjadi tumpang tindih atau terlalu rumit untuk diterapkan pada satu pertemuan. Selain itu, menerjemahkan hasil asesmen kuantitatif dan kualitatif dari 34 siswa menjadi strategi pembelajaran yang benar-benar berpihak pada murid membutuhkan ketelitian dalam analisis data serta kepekaan terhadap konteks budaya masing-masing peserta didik.",
@@ -232,7 +223,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Pembelajaran Sosial Emosional (PSE)",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah PSE menghubungkan pemahaman saya tentang pentingnya relasi yang sehat antara guru dan murid sebagai fondasi pembelajaran yang bermakna. Melalui rangkaian lembar kerja yang dipetakan pada kompetensi CASEL serta analisis kasus Sokola Rimba dari berbagai sudut pandang, saya menyadari bahwa kompetensi sosial emosional bukan hanya milik peserta didik, tetapi juga harus dimiliki dan dikembangkan oleh guru itu sendiri.",
         challenge:  "Tantangan yang saya alami adalah menerapkan kerangka CASEL dan model EMC2 secara konsisten dalam konteks pembelajaran Informatika yang cenderung berorientasi teknis, sehingga saya perlu berpikir kreatif untuk mengintegrasikan aspek sosial emosional tanpa mengurangi capaian pembelajaran teknis. ",
@@ -244,7 +234,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Pendidikan Inklusi di Sekolah (PI)",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah ini menghubungkan pemahaman saya tentang keberagaman peserta didik dengan tanggung jawab guru untuk memastikan setiap anak, termasuk Peserta Didik dengan Perhatian Khusus/Disabilitas (PDPD), mendapatkan akses pembelajaran yang setara. Melalui studi kasus profiling peserta didik berkebutuhan khusus dan analisis proses penerimaan peserta didik baru di sekolah inklusif, saya semakin memahami bahwa inklusivitas adalah tanggung jawab bersama seluruh warga sekolah, bukan hanya guru pendamping khusus.",
         challenge:  "Tantangan yang saya hadapi adalah memahami secara utuh tujuh tahapan yang dibahas dalam mata kuliah ini, mulai dari evaluasi proses PPDB, identifikasi, asesmen awal, penetapan profil, hingga perencanaan, pelaksanaan, dan evaluasi pembelajaran akomodatif bagi PDPD, serta menerapkannya secara kontekstual melalui pendekatan Project Based Learning. Menyusun profil kebutuhan belajar yang akurat bagi peserta didik dengan kebutuhan khusus, seperti pada studi kasus Alya, menuntut kepekaan dan ketelitian ekstra dibandingkan profiling peserta didik pada umumnya.",
@@ -256,7 +245,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Seminar Pendidikan Profesi Guru (SPPG)",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah Seminar PPG menghubungkan seluruh rangkaian pengalaman belajar saya selama mengikuti PPG, mulai dari perkuliahan di kelas hingga praktik lapangan, menjadi satu proses refleksi yang utuh dan menyeluruh. Melalui seminar ini saya diajak melihat kembali perjalanan belajar yang telah dilalui secara logis, kritis, dan sistematis, sehingga dapat memahami sejauh mana materi yang dipelajari telah membentuk perspektif saya sebagai calon guru profesional.",
         challenge:  "Tantangan utama yang saya hadapi adalah bersikap jujur dan objektif dalam menilai kekurangan diri sendiri, bukan hanya menonjolkan pencapaian atau kelebihan yang sudah dimiliki. Menyusun refleksi yang benar-benar kritis dan sistematis, alih-alih sekadar naratif pengalaman, juga menuntut latihan berpikir reflektif yang lebih mendalam dibandingkan refleksi yang biasa saya tulis pada mata kuliah lain.",
@@ -268,7 +256,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Projek Kepemimpinan (PK)",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah Projek Kepemimpinan menghubungkan teori kepemimpinan dengan pengalaman nyata merancang, mengelola, dan mengeksekusi sebuah inisiatif melalui proyek tim bertema “Gesture Recognition with BISINDO”, sebuah aplikasi untuk mengenali gerakan tangan pada Bahasa Isyarat Indonesia (BISINDO). Proses perencanaan proyek ini menghubungkan pemahaman teoretis tentang kepemimpinan dengan praktik langsung merancang solusi nyata bagi permasalahan di dunia nyata.",
         challenge:  "Tantangan yang saya hadapi adalah menyeimbangkan peran kolaboratif sebagai anggota tim dengan tanggung jawab menunjukkan inisiatif kepemimpinan yang jelas, tanpa mendominasi proses pengambilan keputusan bersama. Menyusun kerangka berpikir Why-How-What secara ringkas namun tetap merepresentasikan kompleksitas proyek BISINDO juga menuntut kejelasan dalam merumuskan tujuan, strategi, dan wujud nyata inisiatif yang dirancang.",
@@ -280,7 +267,6 @@ Pengalaman menjalani PPL, baik saat di SMA Labschool UNESA 1 maupun sekarang di 
     },
     {
       nama:    "Praktik Pengalaman Lapangan (PPL) Mandiri",
-      dosen:   "[NAMA DOSEN PENGAMPU]",
       c4: {
         connection: "Mata kuliah PPL Mandiri menghubungkan seluruh bekal yang saya peroleh dari PPL Terbimbing serta mata kuliah Pembelajaran Mendalam dan Asesmen Lanjut (PMA Lanjut) dan Pembelajaran Sosial Emosional (PSE) ke dalam praktik mengajar mandiri di SMP Negeri 12 Surabaya. Tahapan orientasi, observasi, pembelajaran mandiri, kegiatan non-mengajar, dan diskusi refleksi akhir membentuk rangkaian pengalaman yang menghubungkan teori pedagogik dengan tanggung jawab penuh sebagai pengajar di kelas.",
         challenge:  "Tantangan terbesar adalah merancang dan melaksanakan pembelajaran secara mandiri tanpa arahan langsung seperti pada tahap PPL Terbimbing, sehingga saya dituntut untuk lebih percaya diri dalam mengambil keputusan pedagogik secara real-time di kelas. Mengintegrasikan hasil asesmen dari mata kuliah PMA Lanjut dan prinsip PSE ke dalam satu rancangan pembelajaran yang kontekstual dan berpihak pada peserta didik, sambil tetap mengelola kegiatan non-mengajar di sekolah, juga menjadi tantangan tersendiri dalam mengatur waktu dan prioritas.",
@@ -537,6 +523,66 @@ Saya percaya belajar paling bermakna terjadi lewat pengalaman langsung, bukan se
         judul:   "Aktif di Komunitas Belajar",
         narasi:  "Saya akan berkolaborasi secara aktif dengan guru pamong, rekan sejawat, dan komunitas guru Informatika untuk berbagi praktik baik, bertukar media dan strategi mengajar, serta menerima masukan yang membangun. Guru yang belajar sendirian cenderung terbatas pada sudut pandangnya sendiri, sedangkan guru yang belajar bersama akan bertumbuh lebih cepat karena dapat melihat berbagai pendekatan yang telah terbukti efektif di kelas lain. Saya akan mewujudkannya dengan mengikuti forum guru mata pelajaran dan komunitas belajar di sekolah, membagikan media ajar serta hasil refleksi yang saya miliki, dan bersikap terbuka terhadap observasi kelas dari rekan guru maupun kepala sekolah. Selain itu, saya akan memanfaatkan platform pengembangan kompetensi guru dari Kemendikdasmen untuk memperkuat kompetensi pedagogik dan profesional secara berkelanjutan.",
       },
+    ],
+  },
+
+  // ============================================================
+  // KARYA INOVASI
+  // ============================================================
+  karyaInovasi: {
+    judul:       "Petualangan di Pulau Informatika: Game Edukasi Ular Tangga Informatika",
+    deskripsi:   "Game edukasi berbasis web bertema pixel art yang mengubah kegiatan mengulang materi Informatika kelas 9 menjadi permainan ular tangga berkelompok. Murid maju di papan 64 petak dengan menjawab soal dari bank 155 soal (mudah, sedang, sulit), ditambah 15 power-up dan 1 sampai 6 pemain. Game dibuat untuk menumbuhkan semangat belajar murid di jam terakhir.",
+
+    // Komponen 1 — Tujuan (array string)
+    tujuanDeskripsi: "Karya ini dirancang untuk mengatasi rendahnya semangat dan keterlibatan murid pada pembelajaran Informatika yang banyak berada di jam terakhir.",
+    tujuan: [
+      "Meningkatkan motivasi belajar murid kelas 9 dalam pembelajaran Informatika melalui permainan yang menyenangkan.",
+      "Membantu murid mengingat kembali materi Informatika melalui soal yang terintegrasi dalam permainan.",
+      "Mendorong diskusi dan kerja sama antarmurid dalam kelompok saat menjawab soal.",
+    ],
+
+    // Komponen 2 — Kelebihan (array objek)
+    kelebihan: [
+      {
+        judul:       "",
+        penjelasan:  "Menggembirakan dan memotivasi. Tema pixel art, tokoh Bug yang lucu, power-up, dan musik latar membuat suasana kelas hidup. Murid terlihat sangat bersemangat saat memainkannya, bahkan di jam terakhir.",
+      },
+      {
+        judul:       "",
+        penjelasan:  "Mendorong kolaborasi. Game dimainkan berkelompok sehingga murid berdiskusi, saling menghargai pendapat, sabar menunggu giliran, dan memilih jawaban dengan pertimbangan.",
+      },
+      {
+        judul:       "",
+        penjelasan:  "Mudah diakses dan fleksibel. Game berbasis web yang bisa dibuka lewat peramban di komputer maupun HP tanpa instalasi. Bank soal 155 soal bisa dipelajari murid lewat menu Kisi-kisi Materi, dan guru dapat menyesuaikan soal.",
+      },
+    ],
+
+    // Komponen 3 — Kekurangan (array objek) + Rencana Perbaikan
+    kekurangan: [
+      {
+        judul:       "",
+        penjelasan:  "Bergantung pada perangkat dan internet. Game butuh perangkat dan koneksi internet, sehingga kurang optimal jika sarana kelas terbatas.",
+      },
+      {
+        judul:       "",
+        penjelasan:  "Cakupan soal terbatas. Bank soal baru dirancang untuk kelas 8 dan 9 dan lebih menekankan bab 2 dan 3 kelas 9, sehingga belum mencakup seluruh materi dan jenjang.",
+      },
+      {
+        judul:       "",
+        penjelasan:  "Durasi dan fokus permainan. Satu permainan sampai finish memakan waktu cukup lama, dan murid berpotensi lebih fokus pada permainannya daripada materinya jika tidak dibimbing guru.",
+      },
+    ],
+    rencanaPerbaikan: "Menambah mode pilihan kelas 7, 8, dan 9 beserta soalnya, mengatur durasi permainan agar muat dalam satu jam pelajaran, dan memakai hasil angket ARCS serta masukan murid untuk perbaikan berikutnya. Guru juga memberi pengantar dan penguatan materi setelah permainan agar fokus belajar tetap terjaga.",
+
+    // Komponen 4 — Dokumentasi
+    linkVideo: "",   // opsional: link YouTube atau Google Drive
+    dokumentasi: [
+      { gambar: "KI1.jpeg" },
+      { gambar: "KI2.jpeg" },
+      { gambar: "KI3.jpeg" },
+      { gambar: "KI4.jpeg" },
+      { gambar: "KI5.jpeg" },
+      { gambar: "KI6.jpeg" },
     ],
   },
 };
